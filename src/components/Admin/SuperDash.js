@@ -1,57 +1,61 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom';
-import IClerk from './Clerk';
-import ISuperintendent from './Superintendent';
-import IDirector from './Director';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import IClerk from "./Clerk";
+import ISuperintendent from "./Superintendent";
+import IDirector from "./Director";
 
 const SuperDash = () => {
-    const [name, setName] = useState('');
-    const [users_C, setUsers_C] = useState([]);
-    const [users_S, setUsers_S] = useState([]);
-    const [users_D, setUsers_D] = useState([]);
+  const [name, setName] = useState("");
+  const [users_C, setUsers_C] = useState([]);
+  const [users_S, setUsers_S] = useState([]);
+  const [users_D, setUsers_D] = useState([]);
 
-    const [design, setDesign] = useState([]);
+  const [design, setDesign] = useState([]);
 
-    const [Service_No, setService_No] = useState('');
-    const [Service_Name, setService_Name] = useState('');
-    const [A_Service_No, setA_Service_No] = useState('');
-    const [disabled_C, setDisabled_C] = useState(false);
-    const [disabled_S, setDisabled_S] = useState(false);
-    const [disabled_D, setDisabled_D] = useState(false);
+  const [Service_No, setService_No] = useState("");
+  const [Service_Name, setService_Name] = useState("");
+  const [A_Service_No, setA_Service_No] = useState("");
+  const [disabled_C, setDisabled_C] = useState(false);
+  const [disabled_S, setDisabled_S] = useState(false);
+  const [disabled_D, setDisabled_D] = useState(false);
 
-    const [Clerk, setClerk] = useState([]);
-    const [Superintendent, setSuperintendent] = useState([]);
-    const [Designation, setDesignation] = useState('');
+  const [Clerk, setClerk] = useState([]);
+  const [Superintendent, setSuperintendent] = useState([]);
+  const [Designation, setDesignation] = useState("");
 
-    const [msg, setMsg] = useState('');
+  const [msg, setMsg] = useState("");
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        getDesign();
-    }, []);
+  useEffect(() => {
+    getDesign();
+  }, []);
 
-    const axiosJWT = axios.create();
+  const axiosJWT = axios.create();
 
-    const getDesign = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/designation',{
-          params:{
-            ALogin_S: localStorage.getItem('ALogin_S')
-          }
-        });
-        setDesign(response.data);
-      //  localStorage.setItem('A_Designation',design[1])
-    }
-    // localStorage.setItem('A_Designation',design[1])
-    // localStorage.setItem('Designation',Designation )
+  const getDesign = async () => {
+    const response = await axiosJWT.get(
+      `${process.env.REACT_APP_BACKEND_URL}/designation`,
+      {
+        params: {
+          ALogin_S: localStorage.getItem("ALogin_S"),
+        },
+      }
+    );
+    setDesign(response.data);
+    //  localStorage.setItem('A_Designation`,design[1])
+  };
+  // localStorage.setItem('A_Designation`,design[1])
+  // localStorage.setItem('Designation`,Designation )
 
-  {/*  const SuperDash = async (e) => {
+  {
+    /*  const SuperDash = async (e) => {
         e.preventDefault();
         try {
             console.log(Service_No);
-            localStorage.setItem('A_Service_No',Service_No);
+            localStorage.setItem('A_Service_No`,Service_No);
             navigate("/adminform1");
         } catch (error) {
             if (error.response) {
@@ -62,24 +66,25 @@ const SuperDash = () => {
     const SuperName = async (e) => {
         e.preventDefault();
         try {
-            localStorage.setItem('A_Service_Name',Service_Name);
+            localStorage.setItem('A_Service_Name`,Service_Name);
             navigate("/adminform1");
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
             }
         }
-    }*/}
+    }*/
+  }
 
-    return (
-        <div className="container mt-5">
-                <div>
-                <strong>
-            <h1>Welcome Back: {design[0]}</h1>
-            <p>{design[1]}</p>
-</strong>
-</div>
-{/*
+  return (
+    <div className="container mt-5">
+      <div>
+        <strong>
+          <h1>Welcome Back: {design[0]}</h1>
+          <p>{design[1]}</p>
+        </strong>
+      </div>
+      {/*
 <div className='right-align for-btn'>
 <form onSubmit={SuperDash}>
 <h1><strong>Search By Service No</strong></h1>
@@ -93,36 +98,34 @@ const SuperDash = () => {
   </form>
 </div>*/}
 
-            <div>
-                       {
-                           (() => {
-                               if(design[1] == "Clerk") {
-                                       return (
-                                         <div>
-                                       <IClerk />
-                                         </div>
-                                       )
-                                   } else if (design[1] == "Superintendent") {
-                                       return (
-                                         <div>
-                                       <ISuperintendent />
-                                         </div>
-                                       )
-                                   } else if (design[1] == "Director") {
-                                       return (
-                                         <div>
-                                       <IDirector />
-                                         </div>
-                                       )
-                                   }
-                           })()
-                       }
-                   </div>
-        </div>
-    )
-}
+      <div>
+        {(() => {
+          if (design[1] == "Clerk") {
+            return (
+              <div>
+                <IClerk />
+              </div>
+            );
+          } else if (design[1] == "Superintendent") {
+            return (
+              <div>
+                <ISuperintendent />
+              </div>
+            );
+          } else if (design[1] == "Director") {
+            return (
+              <div>
+                <IDirector />
+              </div>
+            );
+          }
+        })()}
+      </div>
+    </div>
+  );
+};
 
-export default SuperDash
+export default SuperDash;
 // <span class="card-title">{user.Mail_Id}</span>
 // <span class="card-text">{user.Service_No}</span>
 // <table className="table ">
@@ -164,7 +167,7 @@ export default SuperDash
 //     e.preventDefault();
 //     // const Service_No=
 //     try {
-//         await axios.post('http://localhost:5000/superForm3');
+//         await axios.post(`${process.env.REACT_APP_BACKEND_URL}/superForm3`);
 //         navigate("/form3",{state:{name:Service_No}});
 //         console.log(Service_No);
 //     } catch (error) {
@@ -200,33 +203,35 @@ export default SuperDash
 // </div>
 
 //pending table
-           // <table className="table  is-fullwidth">
-           //
-           //     <tbody>
-           //             <tr key={user.id}>
-           //                 <td>{user.Clerk}</td>
-           //                 <td>{user.Superindendent}</td>
-           //                 <td>{user.Director}</td>
-           //             </tr>
-           //     </tbody>
-           // </table>
-           // </span>
+// <table className="table  is-fullwidth">
+//
+//     <tbody>
+//             <tr key={user.id}>
+//                 <td>{user.Clerk}</td>
+//                 <td>{user.Superindendent}</td>
+//                 <td>{user.Director}</td>
+//             </tr>
+//     </tbody>
+// </table>
+// </span>
 // <span class=" col-sm-3 row">
 //           <span class=" col-sm-1"> {user.Clerk} </span>
 //           <span class=" col-sm-1"> {user.Superindendent} </span>
 //           <span class="col-sm-1"> {user.Director} </span>
 // </span>
 
-
-{/*<div style={{textAlign:'center'}}>
+{
+  /*<div style={{textAlign:'center'}}>
 <tr style={{textAlign:'center'}} >
     <td  style={{paddingLeft:'11rem'}} >Clerk</td>
     <td style={{padding:'0 6rem'}}>Superintendent</td>
     <td style={{paddingRight:'6rem'}}>Director</td>
 </tr>
-</div>*/}
+</div>*/
+}
 
-{/*
+{
+  /*
 <div>
             {users_C.map((user, index) => (
               <form onSubmit={SuperDash}>
@@ -286,7 +291,7 @@ export default SuperDash
            ))}
 </div>
 
-<div style={{backgroundColor: 'black', padding:'1.5rem'}}>
+<div style={{backgroundColor: 'black`, padding:'1.5rem'}}>
             {users_D.map((user, index) => (
               <form onSubmit={SuperDash}>
               <div class="card space for-btn">
@@ -314,4 +319,5 @@ export default SuperDash
            </form>
 
            ))}
-</div>*/}
+</div>*/
+}

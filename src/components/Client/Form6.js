@@ -119,7 +119,7 @@ const Form6 = () => {
 
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -130,7 +130,7 @@ const getDDOB  = async () => {
       }
 
       const getName  = async () => {
-             const response = await axiosJWT.get('http://localhost:5000/getName',{
+             const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
                params:{
                  Service_No: Service_No
@@ -153,7 +153,7 @@ const creatSRow = async (e) => {
 
    try {
      const res = await axios.post(
-       "http://localhost:5000/creatSRow",
+       "${process.env.REACT_APP_BACKEND_URL}/creatSRow",
        formData
      );
      console.log(res);
@@ -170,7 +170,7 @@ const creatSRow = async (e) => {
  const axiosJWT = axios.create();
      const getCivil = async () => {
      // const response = await axiosJWT.get(`${process.env.REACT_APP_DOMAIN}/civil_D`);
-      const response = await axiosJWT.get('http://localhost:5000/civil_D');
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/civil_D');
      setCivil(response.data);
      }
 
@@ -353,27 +353,27 @@ const onMaritalStatusChange = (e) =>  {
 
 const checkSEmp = (e) =>  {
 setVisible2(true)
-localStorage.setItem('Spouse_Dept',Spouse_Dept);
-localStorage.setItem('Spouse_Sector',Spouse_Sector);
-localStorage.setItem('Spouse_Pres_Desg',Spouse_Pres_Desg);
-localStorage.setItem('Spouse_Employer',Spouse_Employer);
-localStorage.setItem('Spouse_Month_Income',Spouse_Month_Income);
-localStorage.setItem('Spouse_Official_No',Spouse_Official_No);
-localStorage.setItem('Spouse_Desg_Retire',Spouse_Desg_Retire);
-localStorage.setItem('Spouse_Retire_Date',Spouse_Retire_Date);
-localStorage.setItem('Spouse_Civil_PPO_No',Spouse_Civil_PPO_No);
+localStorage.setItem('Spouse_Dept`,Spouse_Dept);
+localStorage.setItem('Spouse_Sector`,Spouse_Sector);
+localStorage.setItem('Spouse_Pres_Desg`,Spouse_Pres_Desg);
+localStorage.setItem('Spouse_Employer`,Spouse_Employer);
+localStorage.setItem('Spouse_Month_Income`,Spouse_Month_Income);
+localStorage.setItem('Spouse_Official_No`,Spouse_Official_No);
+localStorage.setItem('Spouse_Desg_Retire`,Spouse_Desg_Retire);
+localStorage.setItem('Spouse_Retire_Date`,Spouse_Retire_Date);
+localStorage.setItem('Spouse_Civil_PPO_No`,Spouse_Civil_PPO_No);
 }
 const checkSUnEmp = (e) =>  {
   setVisible2(false)
-  localStorage.setItem('Spouse_Dept',null);
-  localStorage.setItem('Spouse_Sector',null);
-  localStorage.setItem('Spouse_Pres_Desg',null);
-  localStorage.setItem('Spouse_Employer',null);
-  localStorage.setItem('Spouse_Month_Income',null);
-  localStorage.setItem('Spouse_Official_No',null);
-  localStorage.setItem('Spouse_Desg_Retire',null);
-  localStorage.setItem('Spouse_Retire_Date',null);
-  localStorage.setItem('Spouse_Civil_PPO_No',null);
+  localStorage.setItem('Spouse_Dept`,null);
+  localStorage.setItem('Spouse_Sector`,null);
+  localStorage.setItem('Spouse_Pres_Desg`,null);
+  localStorage.setItem('Spouse_Employer`,null);
+  localStorage.setItem('Spouse_Month_Income`,null);
+  localStorage.setItem('Spouse_Official_No`,null);
+  localStorage.setItem('Spouse_Desg_Retire`,null);
+  localStorage.setItem('Spouse_Retire_Date`,null);
+  localStorage.setItem('Spouse_Civil_PPO_No`,null);
 }
 
 
@@ -391,32 +391,32 @@ const Form6 = async (e) => {
         try {
 
 
-                localStorage.setItem('Service_No',Service_No);
-                localStorage.setItem('Marital_Status',Marital_Status);
-                localStorage.setItem('Marriage_Date',Marriage_Date);
-                localStorage.setItem('Spouse_Name',Spouse_Name);
-                localStorage.setItem('Spouse_Relation',Spouse_Relation);
-                localStorage.setItem('Spouse_DOB',Spouse_DOB);
-                localStorage.setItem('Spouse_Id_Mark',Spouse_Id_Mark);
-                localStorage.setItem('Spouse_Qualification',Spouse_Qualification);
-                localStorage.setItem('Spouse_Emp_Status',Spouse_Emp_Status);
-                localStorage.setItem('Spouse_Adhaar',Spouse_Adhaar);
-                localStorage.setItem('Spouse_Voter_Id',Spouse_Voter_Id);
-                localStorage.setItem('Spouse_PAN',Spouse_PAN);
-                localStorage.setItem('Spouse_CSD',Spouse_CSD);
-                localStorage.setItem('Spouse_ECHS',Spouse_ECHS);
-                localStorage.setItem('Spouse_Dept',Spouse_Dept);
-                localStorage.setItem('Spouse_Sector',Spouse_Sector);
-                localStorage.setItem('Spouse_Pres_Desg',Spouse_Pres_Desg);
-                localStorage.setItem('Spouse_Employer',Spouse_Employer);
-                localStorage.setItem('Spouse_Month_Income',Spouse_Month_Income);
-                localStorage.setItem('Spouse_Official_No',Spouse_Official_No);
-                localStorage.setItem('Spouse_Desg_Retire',Spouse_Desg_Retire);
-                localStorage.setItem('Spouse_Retire_Date',Spouse_Retire_Date);
-                localStorage.setItem('Spouse_Civil_PPO_No',Spouse_Civil_PPO_No);
-                localStorage.setItem('Divorce_Date',Divorce_Date);
-                localStorage.setItem('Court_Order',Court_Order);
-                localStorage.setItem('Death_Date',Death_Date);
+                localStorage.setItem('Service_No`,Service_No);
+                localStorage.setItem('Marital_Status`,Marital_Status);
+                localStorage.setItem('Marriage_Date`,Marriage_Date);
+                localStorage.setItem('Spouse_Name`,Spouse_Name);
+                localStorage.setItem('Spouse_Relation`,Spouse_Relation);
+                localStorage.setItem('Spouse_DOB`,Spouse_DOB);
+                localStorage.setItem('Spouse_Id_Mark`,Spouse_Id_Mark);
+                localStorage.setItem('Spouse_Qualification`,Spouse_Qualification);
+                localStorage.setItem('Spouse_Emp_Status`,Spouse_Emp_Status);
+                localStorage.setItem('Spouse_Adhaar`,Spouse_Adhaar);
+                localStorage.setItem('Spouse_Voter_Id`,Spouse_Voter_Id);
+                localStorage.setItem('Spouse_PAN`,Spouse_PAN);
+                localStorage.setItem('Spouse_CSD`,Spouse_CSD);
+                localStorage.setItem('Spouse_ECHS`,Spouse_ECHS);
+                localStorage.setItem('Spouse_Dept`,Spouse_Dept);
+                localStorage.setItem('Spouse_Sector`,Spouse_Sector);
+                localStorage.setItem('Spouse_Pres_Desg`,Spouse_Pres_Desg);
+                localStorage.setItem('Spouse_Employer`,Spouse_Employer);
+                localStorage.setItem('Spouse_Month_Income`,Spouse_Month_Income);
+                localStorage.setItem('Spouse_Official_No`,Spouse_Official_No);
+                localStorage.setItem('Spouse_Desg_Retire`,Spouse_Desg_Retire);
+                localStorage.setItem('Spouse_Retire_Date`,Spouse_Retire_Date);
+                localStorage.setItem('Spouse_Civil_PPO_No`,Spouse_Civil_PPO_No);
+                localStorage.setItem('Divorce_Date`,Divorce_Date);
+                localStorage.setItem('Court_Order`,Court_Order);
+                localStorage.setItem('Death_Date`,Death_Date);
 
 if(Marital_Status=='Single'){
             navigate("/Form7");
@@ -429,8 +429,8 @@ if(Marital_Status=='Single'){
             }
         }
     }
-const SECTOR = ['State', 'Central', 'PSU', 'Private', 'Govt.Societies'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widow/Widower'];
+const SECTOR = ['State`, 'Central`, 'PSU`, 'Private`, 'Govt.Societies'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widow/Widower'];
 
     return (
     <div className="center">
@@ -659,7 +659,7 @@ const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widow/Widower'];
     <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
 
 <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
     <button className=" btn" ><Link to="/Doc_Form">Back</Link> </button>
     <button className="btn my-2 my-sm-0 " type="submit">Next </button>

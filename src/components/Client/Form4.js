@@ -77,19 +77,19 @@ function toggle(value){
 
    const axiosJWT = axios.create();
     const getStates = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/state_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/state_D');
     setStates(response.data);
     }
 
 {/* // const getDist = async () => {
-    // const response = await axiosJWT.get('http://localhost:5000/dist_D');
+    // const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/dist_D');
     // setDist(response.data);
     // }
    */}
 
 
    const getName  = async () => {
-          const response = await axiosJWT.get('http://localhost:5000/getName',{
+          const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
             params:{
               Service_No: Service_No
@@ -100,31 +100,31 @@ function toggle(value){
 
 
     const getStreets = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/street_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/street_D');
     setStreets(response.data);
     }
 
  {/*   const getTaluks = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/taluk_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/taluk_D');
     setTaluks(response.data);
     }*/}
 
 
  const getDist = async () => {
-      localStorage.setItem('V_State',State)
+      localStorage.setItem('V_State`,State)
 
       const sn=localStorage.getItem('V_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
       setDist(response.data);
     }
     const getDistP = async () => {
-      localStorage.setItem('V_P_State',P_State)
+      localStorage.setItem('V_P_State`,P_State)
 
       const sn=localStorage.getItem('V_P_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
@@ -132,20 +132,20 @@ function toggle(value){
     }
 
  const getTaluksP = async () => {
-      localStorage.setItem('V_P_District',P_District)
+      localStorage.setItem('V_P_District`,P_District)
 
       const dd=localStorage.getItem('V_P_District');
-      const response = await axiosJWT.get('http://localhost:5000/Taluk_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Taluk_Depend`,
           {
               params:{districts:dd}
           });
       setTaluksP(response.data);
     }
     const getTaluks = async () => {
-      localStorage.setItem('V_District',District)
+      localStorage.setItem('V_District`,District)
 
       const dd=localStorage.getItem('V_District');
-      const response = await axiosJWT.get('http://localhost:5000/Taluk_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Taluk_Depend`,
           {
               params:{districts:dd}
           });
@@ -196,7 +196,7 @@ const onPPincodeChange = (e) =>  {
 
 }
 const getMail  = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/getForgetMail',{
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getForgetMail`,{
 
       params:{
         Service_No: Service_No
@@ -211,43 +211,43 @@ const getMail  = async () => {
         e.preventDefault();
         try {
 
-localStorage.setItem('Service_No',Service_No);
+localStorage.setItem('Service_No`,Service_No);
 if(checked==0){
-localStorage.setItem('Pincode',P_Pincode);
-localStorage.setItem('State',P_State);
-localStorage.setItem('District',P_District);
-localStorage.setItem('Taluk_Name',P_Taluk_Name);
-localStorage.setItem('City_Village',P_City_Village);
-localStorage.setItem('Locality',P_Locality);
-localStorage.setItem('Street',P_Street);
-localStorage.setItem('House_Name',P_House_Name);
-localStorage.setItem('House_No',P_House_No);
-localStorage.setItem('Police_Station',P_Police_Station);
+localStorage.setItem('Pincode`,P_Pincode);
+localStorage.setItem('State`,P_State);
+localStorage.setItem('District`,P_District);
+localStorage.setItem('Taluk_Name`,P_Taluk_Name);
+localStorage.setItem('City_Village`,P_City_Village);
+localStorage.setItem('Locality`,P_Locality);
+localStorage.setItem('Street`,P_Street);
+localStorage.setItem('House_Name`,P_House_Name);
+localStorage.setItem('House_No`,P_House_No);
+localStorage.setItem('Police_Station`,P_Police_Station);
 }else{
-localStorage.setItem('Pincode',Pincode);
-localStorage.setItem('State',State);
-localStorage.setItem('District',District);
-localStorage.setItem('Taluk_Name',Taluk_Name);
-localStorage.setItem('City_Village',City_Village);
-localStorage.setItem('Locality',Locality);
-localStorage.setItem('Street',Street);
-localStorage.setItem('House_Name',House_Name);
-localStorage.setItem('House_No',House_No);
-localStorage.setItem('Police_Station',Police_Station);
+localStorage.setItem('Pincode`,Pincode);
+localStorage.setItem('State`,State);
+localStorage.setItem('District`,District);
+localStorage.setItem('Taluk_Name`,Taluk_Name);
+localStorage.setItem('City_Village`,City_Village);
+localStorage.setItem('Locality`,Locality);
+localStorage.setItem('Street`,Street);
+localStorage.setItem('House_Name`,House_Name);
+localStorage.setItem('House_No`,House_No);
+localStorage.setItem('Police_Station`,Police_Station);
 }
-localStorage.setItem('Tele_No',Tele_No);
-localStorage.setItem('same',checked);
+localStorage.setItem('Tele_No`,Tele_No);
+localStorage.setItem('same`,checked);
 //PERMANENT
-localStorage.setItem('P_Pincode',P_Pincode);
-localStorage.setItem('P_State',P_State);
-localStorage.setItem('P_District',P_District);
-localStorage.setItem('P_Taluk_Name',P_Taluk_Name);
-localStorage.setItem('P_Locality',P_Locality);
-localStorage.setItem('P_City_Village',P_City_Village);
-localStorage.setItem('P_Street',P_Street);
-localStorage.setItem('P_House_Name',P_House_Name);
-localStorage.setItem('P_House_No',P_House_No);
-localStorage.setItem('P_Police_Station',P_Police_Station);
+localStorage.setItem('P_Pincode`,P_Pincode);
+localStorage.setItem('P_State`,P_State);
+localStorage.setItem('P_District`,P_District);
+localStorage.setItem('P_Taluk_Name`,P_Taluk_Name);
+localStorage.setItem('P_Locality`,P_Locality);
+localStorage.setItem('P_City_Village`,P_City_Village);
+localStorage.setItem('P_Street`,P_Street);
+localStorage.setItem('P_House_Name`,P_House_Name);
+localStorage.setItem('P_House_No`,P_House_No);
+localStorage.setItem('P_Police_Station`,P_Police_Station);
 
 navigate("/Form5");
 
@@ -531,7 +531,7 @@ navigate("/Form5");
 
     <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
     <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
     <button className=" btn" ><Link to="/Form3">Back</Link> </button>
     <button className="btn my-2 my-sm-0 " type="submit">Next </button>

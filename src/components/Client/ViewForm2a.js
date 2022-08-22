@@ -58,7 +58,7 @@ const ViewForm2a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -67,7 +67,7 @@ const ViewForm2a = () => {
     }
     const getService = async () => {
          const sn = localStorage.getItem('getService_Name')
-        const response = await axiosJWT.get('http://localhost:5000/getService_Name',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getService_Name`,{
           params:{
             getService_Name: sn
           }
@@ -78,23 +78,23 @@ const ViewForm2a = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-            localStorage.setItem('V_Unit_Last_Served',Unit_Last_Served);
-                localStorage.setItem('V_Discharge_Date',Discharge_Date);
-                localStorage.setItem('V_Discharge_Reason',Discharge_Reason);
-                localStorage.setItem('V_Discharge_Med_Cat',Discharge_Med_Cat);
-                localStorage.setItem('V_Discharge_Character',Discharge_Character);
-                localStorage.setItem('V_Discharge_Book_No',Discharge_Book_No);
-                localStorage.setItem('V_If_Pensioner',If_Pensioner);
-                localStorage.setItem('V_PPO_No',PPO_No);
-                localStorage.setItem('V_Pension_Sanctioned',Pension_Sanctioned);
-                localStorage.setItem('V_Present_Pension',Present_Pension);
-                localStorage.setItem('V_If_Sanctioned_Dis_Pension',If_Sanctioned_Dis_Pension);
-                localStorage.setItem('V_Disability_Pension',Disability_Pension);
-                localStorage.setItem('V_Disability_Percentage',Disability_Percentage);
-                localStorage.setItem('V_Pension_AC_No',Pension_AC_No);
-                localStorage.setItem('V_Bank_Name',Bank_Name);
-                localStorage.setItem('V_Branch',Branch);
-                localStorage.setItem('V_IFSC',IFSC);
+            localStorage.setItem('V_Unit_Last_Served`,Unit_Last_Served);
+                localStorage.setItem('V_Discharge_Date`,Discharge_Date);
+                localStorage.setItem('V_Discharge_Reason`,Discharge_Reason);
+                localStorage.setItem('V_Discharge_Med_Cat`,Discharge_Med_Cat);
+                localStorage.setItem('V_Discharge_Character`,Discharge_Character);
+                localStorage.setItem('V_Discharge_Book_No`,Discharge_Book_No);
+                localStorage.setItem('V_If_Pensioner`,If_Pensioner);
+                localStorage.setItem('V_PPO_No`,PPO_No);
+                localStorage.setItem('V_Pension_Sanctioned`,Pension_Sanctioned);
+                localStorage.setItem('V_Present_Pension`,Present_Pension);
+                localStorage.setItem('V_If_Sanctioned_Dis_Pension`,If_Sanctioned_Dis_Pension);
+                localStorage.setItem('V_Disability_Pension`,Disability_Pension);
+                localStorage.setItem('V_Disability_Percentage`,Disability_Percentage);
+                localStorage.setItem('V_Pension_AC_No`,Pension_AC_No);
+                localStorage.setItem('V_Bank_Name`,Bank_Name);
+                localStorage.setItem('V_Branch`,Branch);
+                localStorage.setItem('V_IFSC`,IFSC);
             navigate("/viewForm2b");
         } catch (error) {
             if (error.response) {

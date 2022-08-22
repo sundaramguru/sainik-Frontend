@@ -56,34 +56,34 @@ const [userList, setUserList] = useState([]);
 
 
     const columns = [
-                        {dataField: 'Service_No', text: 'Service No' , filter: textFilter() },
+                        {dataField: 'Service_No`, text: 'Service No' , filter: textFilter() },
 //employed details
-                        {dataField: 'Age', text: 'Age',hidden : hideAge, sort: true , filter: textFilter()},
-                        {dataField: 'Trade_Code', text: 'Trade_Code',hidden : hideTrade_Code, sort: true , filter: textFilter()},
-                        {dataField: 'Civil_Qualification', text: 'Civil Qualification',hidden : hideCivil, sort: true , filter: textFilter()},
-                        {dataField: 'Trade_Name', text: 'Emp Trade Name',hidden : hideTrade_Name, sort: true , filter: textFilter()},
-                        {dataField: 'Addi_Course1', text: 'Additional Course 1',hidden : hideAddi_Course1, sort: true , filter: textFilter()},
-                        {dataField: 'Addi_Course2', text: 'Additional Course 2',hidden : hideAddi_Course2, sort: true , filter: textFilter()},
-                        {dataField: 'Addi_Course3', text: 'Additional Course 3',hidden : hideAddi_Course3, sort: true , filter: textFilter()},
-                        {dataField: 'Addi_Course4', text: 'Additional Course 4',hidden : hideAddi_Course4, sort: true , filter: textFilter()},
-                        {dataField: 'ESM_No', text: 'ESM No',hidden : hideESM_No, sort: true , filter: textFilter()},
-                        {dataField: 'Equi_Test', text: 'Equivalent Test',hidden : hideEqui_test, sort: true , filter: textFilter()},
+                        {dataField: 'Age`, text: 'Age`,hidden : hideAge, sort: true , filter: textFilter()},
+                        {dataField: 'Trade_Code`, text: 'Trade_Code`,hidden : hideTrade_Code, sort: true , filter: textFilter()},
+                        {dataField: 'Civil_Qualification`, text: 'Civil Qualification`,hidden : hideCivil, sort: true , filter: textFilter()},
+                        {dataField: 'Trade_Name`, text: 'Emp Trade Name`,hidden : hideTrade_Name, sort: true , filter: textFilter()},
+                        {dataField: 'Addi_Course1`, text: 'Additional Course 1`,hidden : hideAddi_Course1, sort: true , filter: textFilter()},
+                        {dataField: 'Addi_Course2`, text: 'Additional Course 2`,hidden : hideAddi_Course2, sort: true , filter: textFilter()},
+                        {dataField: 'Addi_Course3`, text: 'Additional Course 3`,hidden : hideAddi_Course3, sort: true , filter: textFilter()},
+                        {dataField: 'Addi_Course4`, text: 'Additional Course 4`,hidden : hideAddi_Course4, sort: true , filter: textFilter()},
+                        {dataField: 'ESM_No`, text: 'ESM No`,hidden : hideESM_No, sort: true , filter: textFilter()},
+                        {dataField: 'Equi_Test`, text: 'Equivalent Test`,hidden : hideEqui_test, sort: true , filter: textFilter()},
 
     ]
 
 
 
 
-const COLSE = ['Age',
-'Trade_Code',
-'Civil Qualification',
-'Trade Name',
-'Additional Course 1',
-'Additional Course 2',
-'Additional Course 3',
+const COLSE = ['Age`,
+'Trade_Code`,
+'Civil Qualification`,
+'Trade Name`,
+'Additional Course 1`,
+'Additional Course 2`,
+'Additional Course 3`,
 
-'Additional Course 4',
-'ESM No','Equivalent Test',
+'Additional Course 4`,
+'ESM No`,'Equivalent Test`,
 ];
 
 
@@ -186,20 +186,20 @@ if(Column_Attribute==="Equivalent Test")
 const pagination = paginationFactory({
     page: 1,
     sizePerPage: 5,
-    lastPageText: '>>',
-    firstPageText: '<<',
-    nextPageText: '>',
-    prePageText: '<',
+    lastPageText: '>>`,
+    firstPageText: '<<`,
+    nextPageText: '>`,
+    prePageText: '<`,
     showTotal: true,
     alwaysShowAllBtns: true,
     onPageChange: function(page,sizePerPage){
-    console.log('page',page);
-    console.log('sizePerPage',sizePerPage);
+    console.log('page`,page);
+    console.log('sizePerPage`,sizePerPage);
 
     },
     onSizePerPageChange: function(page, sizePerPage){
-    console.log('page',page);
-    console.log('sizePerPage',sizePerPage);
+    console.log('page`,page);
+    console.log('sizePerPage`,sizePerPage);
     }
 
 });
@@ -208,7 +208,7 @@ const pagination = paginationFactory({
 
   const downloadPdfData = (e) =>{
    const pdf = new jsPDF();
-   var doc = new jsPDF('portrait','px','a3','false');
+   var doc = new jsPDF('portrait`,'px`,'a3`,'false');
    pdf.autoTable({html:"#table-to-xls"});
    pdf.save("Record Filter.pdf")
 
@@ -217,7 +217,7 @@ const pagination = paginationFactory({
 
     const getUsers2 = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/adminformuee');
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminformuee');
       setUsers2(response.data);
     }
 

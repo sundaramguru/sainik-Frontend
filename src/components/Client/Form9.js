@@ -20,8 +20,8 @@ const Form9 = () => {
      const [useredit, setUserEdit] = useState([]);
 
 
-const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widower/Widow'];
+const RELATION = ['Father`, 'Mother`, 'Daughter`, 'Son'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widower/Widow'];
 
 const onAcademicChange = (e) =>  {
     const p = /^[0-9]+$/;
@@ -68,7 +68,7 @@ const onAdhaarChange = (e) =>  {
 
  const getUserEdit= async () => {
         const sn = localStorage.getItem('Dep_Name')
-        const response = await axiosJWT.get('http://localhost:5000/EditForm8',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/EditForm8`,{
           params:{
             Dep_Name: sn
           }
@@ -80,7 +80,7 @@ const onAdhaarChange = (e) =>  {
  const Form9 = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/u_dependent_details', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/u_dependent_details`, {
                 Service_No:Service_No,
                 Dep_Name: Dep_Name,
                 Relation:Relation,

@@ -57,7 +57,7 @@ const ViewForm5Edit = () => {
 
 const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform5dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform5dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -67,7 +67,7 @@ const getdep = async () => {
 
     const getCivil = async () => {
     // const response = await axiosJWT.get(`${process.env.REACT_APP_DOMAIN}/civil_D`);
-     const response = await axiosJWT.get('http://localhost:5000/civil_D');
+     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/civil_D');
     setCivil(response.data);
     }
 
@@ -135,14 +135,14 @@ setvisiblebutton3(true)
 }
 
 
-const SECTOR = ['State', 'Central', 'PSU', 'Private', 'Govt.Societies'];
+const SECTOR = ['State`, 'Central`, 'PSU`, 'Private`, 'Govt.Societies'];
 
 
 
    const ViewForm5Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm5Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm5Edit`, {
                 Service_No:Service_No,
                 Civil_Qualification: Civil_Qualification,
                 Addi_Course:Addi_Course,

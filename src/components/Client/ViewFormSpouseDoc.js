@@ -31,7 +31,7 @@ const ViewFormSpouseDoc = () => {
 
   const getUsers = async () => {
       const sn = localStorage.getItem('Service_No')
-      const response = await axiosJWT.get('http://localhost:5000/UserSpoViewFormDoc',{
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/UserSpoViewFormDoc`,{
         params:{
           V_Service_No: sn
         }
@@ -48,7 +48,7 @@ const ViewFormSpouseDoc = () => {
     const imageObjectURL = URL.createObjectURL(imageBlob);
     setImg(imageObjectURL);
   };
-  localStorage.setItem('image',img);
+  localStorage.setItem('image`,img);
   console.log(users[0]);
 
   const fetchpdf = async () => {
@@ -74,7 +74,7 @@ const ViewFormSpouseDoc = () => {
 
   };
   const getName  = async () => {
-         const response = await axiosJWT.get('http://localhost:5000/getName',{
+         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
            params:{
              Service_No: Service_No

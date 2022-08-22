@@ -37,7 +37,7 @@ const ViewFormWa = () => {
 
     // const getUsers = async () => {
     //   //  const sn = localStorage.getItem('V_Service_No')
-    //     const response = await axiosJWT.get('http://localhost:5000/awidowform',{
+    //     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/awidowform`,{
     //       params:{
     //         V_Service_No: '111'
     //       }
@@ -48,7 +48,7 @@ const ViewFormWa = () => {
 
    const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/awidowform',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/awidowform`,{
           params:{
             V_Service_No: sn
           }
@@ -60,11 +60,11 @@ const ViewFormWa = () => {
         e.preventDefault();
         try {
             console.log(Service_No);
-                localStorage.setItem('V_Family_Pension',Family_Pension);
-                localStorage.setItem('V_W_Nxt_Kin',W_Nxt_Kin);
-                localStorage.setItem('V_Death_Date',Death_Date);
-                localStorage.setItem('V_Death_Nature',Death_Nature);
-                localStorage.setItem('V_ESM_No',ESM_No);
+                localStorage.setItem('V_Family_Pension`,Family_Pension);
+                localStorage.setItem('V_W_Nxt_Kin`,W_Nxt_Kin);
+                localStorage.setItem('V_Death_Date`,Death_Date);
+                localStorage.setItem('V_Death_Nature`,Death_Nature);
+                localStorage.setItem('V_ESM_No`,ESM_No);
 
             navigate("/viewFormwb");
         } catch (error) {

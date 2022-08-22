@@ -91,7 +91,7 @@ const ViewForm1Edit = () => {
 
       const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform1dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform1dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -117,7 +117,7 @@ const ViewForm1Edit = () => {
 
 
  const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -128,7 +128,7 @@ const ViewForm1Edit = () => {
 
 
 
-     const GENDER = ['M', 'F', 'Transgender'];
+     const GENDER = ['M`, 'F`, 'Transgender'];
 
      function handleChange(e) {
              console.log(e.target.files);
@@ -138,7 +138,7 @@ const ViewForm1Edit = () => {
 const axiosJWT = axios.create();
 const sn=localStorage.getItem('Service_No');
 const getUserStatus = async () => {
-const response = await axiosJWT.get('http://localhost:5000/getUserStatus',
+const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getUserStatus`,
 {
   params:{Service_No:sn}
 });
@@ -154,27 +154,27 @@ if( userStatus==='Submitted'){
 }
 
     const getForm1 = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/getForm1');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getForm1');
     setForm1(response.data);
     }
 
     const getServices = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/Service_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Service_D');
     setServices(response.data);
     }
 
     const getCorp = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/corp_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/corp_D');
     setCorp(response.data);
     }
 
 
 const getRecord = async () => {
 
-   localStorage.setItem('V_Corps_Name',Corps_Name)
+   localStorage.setItem('V_Corps_Name`,Corps_Name)
    const sn=localStorage.getItem('V_Corps_Name');
 
-   const response = await axiosJWT.get('http://localhost:5000/record_D',
+   const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/record_D`,
        {
            params:{record:sn}
        }
@@ -188,7 +188,7 @@ const getRecord = async () => {
 
   const getServiceRecord = async () => {
 
-  localStorage.setItem('V_Service_Name',Service_Name)
+  localStorage.setItem('V_Service_Name`,Service_Name)
   const dd=localStorage.getItem('V_Service_Name');
 
   if(dd=="Air Force"){
@@ -208,13 +208,13 @@ const getRecord = async () => {
   }
 
     const getTrade = async () => {
-      localStorage.setItem('Service_Name',Service_Name)
+      localStorage.setItem('Service_Name`,Service_Name)
       const sn=localStorage.getItem('Service_Name');
 
-      localStorage.setItem('Group_Name',Group_Name)
+      localStorage.setItem('Group_Name`,Group_Name)
       const g=localStorage.getItem('Group_Name');
 
-    const response = await axiosJWT.get('http://localhost:5000/trade_D',
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/trade_D`,
     {
       params:{Service_Name:sn,
       Group:g}
@@ -224,13 +224,13 @@ const getRecord = async () => {
 
 
   const getRank = async () => {
-      localStorage.setItem('Service_Name',Service_Name)
+      localStorage.setItem('Service_Name`,Service_Name)
       const sn=localStorage.getItem('Service_Name');
 
-      localStorage.setItem('Rank_Category',Rank_Category)
+      localStorage.setItem('Rank_Category`,Rank_Category)
       const rc=localStorage.getItem('Rank_Category');
 
-    const response = await axiosJWT.get('http://localhost:5000/rank_D',
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/rank_D`,
   {
     params:{Service_Name:sn,
     Rank_Category:rc}
@@ -239,7 +239,7 @@ const getRecord = async () => {
     }
 
   const getRankc = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/Rank_Category_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Rank_Category_D');
     setRankc(response.data);
     }
 
@@ -285,7 +285,7 @@ const uploadImg = async (e) => {
 
    try {
      const res = await axios.post(
-       "http://localhost:5000/uploadImg",
+       "${process.env.REACT_APP_BACKEND_URL}/uploadImg",
        formData
      );
      console.log(res);
@@ -302,7 +302,7 @@ const uploadImg = async (e) => {
 const ViewForm1Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm1Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm1Edit`, {
                 Service_No:Service_No,
                 Service_Name: Service_Name,
                 Corps_Name:Corps_Name,
@@ -330,7 +330,7 @@ const ViewForm1Edit = async (e) => {
             }
         }
     }
-const GROUP = ['X', 'Y', 'Z', 'Others'];
+const GROUP = ['X`, 'Y`, 'Z`, 'Others'];
 
 // //--------------------------POST REQUEST -----------------------------
 

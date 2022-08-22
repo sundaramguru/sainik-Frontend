@@ -44,7 +44,7 @@ const ViewFormDocb = () => {
 
 
   const getRegisterDate  = async () => {
-         const response = await axiosJWT.get('http://localhost:5000/getRegisterDate',{
+         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getRegisterDate`,{
 
            params:{
              Service_No: Service_No
@@ -105,7 +105,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadImg",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadImg",
             formData
 
 
@@ -128,7 +128,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadAdhar",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadAdhar",
             formData
           );
           alert ("Adhaar uploaded Successfully");
@@ -150,7 +150,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadPAN",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadPAN",
             formData
           );
           alert ("PAN uploaded Successfully");
@@ -169,7 +169,7 @@ const ViewFormDocb = () => {
         formData.append("ECHSName", ECHSName);
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadECHS",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadECHS",
             formData
           );
           alert ("ECHS uploaded Successfully");
@@ -191,7 +191,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/UploadVoter",
+            "${process.env.REACT_APP_BACKEND_URL}/UploadVoter",
             formData
           );
           alert ("Voter uploaded Successfully");
@@ -211,7 +211,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadDischarge_Book",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadDischarge_Book",
             formData
           );
           alert ("Discharge Book uploaded Successfully");
@@ -232,7 +232,7 @@ const ViewFormDocb = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadPPO",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadPPO",
             formData
           );
           alert ("PPO uploaded Successfully");
@@ -440,7 +440,7 @@ const changeStyleph = () => {
 
               <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
               <div className="col-lg-12 right-align " >
-              <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+              <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
               </div>
               <button className=" btn" ><Link to="/ViewFormDoc">Back</Link> </button>
               <button className="btn my-2 my-sm-0 " ><Link to="/ViewForm6a">Next</Link> </button>
@@ -583,7 +583,7 @@ export default ViewFormDocb
 //
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/uploadAdhar",
+//             "${process.env.REACT_APP_BACKEND_URL}/uploadAdhar",
 //             formData
 //           );
 //           console.log(res);
@@ -601,7 +601,7 @@ export default ViewFormDocb
 //
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/uploadPAN",
+//             "${process.env.REACT_APP_BACKEND_URL}/uploadPAN",
 //             formData
 //           );
 //           console.log(res);
@@ -616,7 +616,7 @@ export default ViewFormDocb
 //         formData.append("ECHSName", ECHSName);
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/uploadECHS",
+//             "${process.env.REACT_APP_BACKEND_URL}/uploadECHS",
 //             formData
 //           );
 //           console.log(res);
@@ -635,7 +635,7 @@ export default ViewFormDocb
 //
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/UploadVoter",
+//             "${process.env.REACT_APP_BACKEND_URL}/UploadVoter",
 //             formData
 //           );
 //           console.log(res);
@@ -652,7 +652,7 @@ export default ViewFormDocb
 //
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/uploadDischarge_Book",
+//             "${process.env.REACT_APP_BACKEND_URL}/uploadDischarge_Book",
 //             formData
 //           );
 //
@@ -670,7 +670,7 @@ export default ViewFormDocb
 //
 //         try {
 //           const res = await axios.post(
-//             "http://localhost:5000/uploadPPO",
+//             "${process.env.REACT_APP_BACKEND_URL}/uploadPPO",
 //             formData
 //           );
 //           console.log(res);

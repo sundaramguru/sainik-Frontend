@@ -78,31 +78,31 @@ function toggle(value){
     const axiosJWT = axios.create();
 
   const getStates = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/state_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/state_D');
     setStates(response.data);
     }
 
 
  const getStreets = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/street_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/street_D');
     setStreets(response.data);
     }
 
  const getDist = async () => {
-      localStorage.setItem('V_State',State)
+      localStorage.setItem('V_State`,State)
 
       const sn=localStorage.getItem('V_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
       setDist(response.data);
     }
     const getDistP = async () => {
-      localStorage.setItem('V_P_State',P_State)
+      localStorage.setItem('V_P_State`,P_State)
 
       const sn=localStorage.getItem('V_P_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
@@ -110,20 +110,20 @@ function toggle(value){
     }
 
  const getTaluksP = async () => {
-      localStorage.setItem('V_P_District',P_District)
+      localStorage.setItem('V_P_District`,P_District)
 
       const dd=localStorage.getItem('V_P_District');
-      const response = await axiosJWT.get('http://localhost:5000/Taluk_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Taluk_Depend`,
           {
               params:{districts:dd}
           });
       setTaluksP(response.data);
     }
     const getTaluks = async () => {
-      localStorage.setItem('V_District',District)
+      localStorage.setItem('V_District`,District)
 
       const dd=localStorage.getItem('V_District');
-      const response = await axiosJWT.get('http://localhost:5000/Taluk_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Taluk_Depend`,
           {
               params:{districts:dd}
           });
@@ -176,7 +176,7 @@ const onPPincodeChange = (e) =>  {
 
 const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform4dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform4dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -186,7 +186,7 @@ const getdep = async () => {
     const ViewForm4Edit = async (e) => {
         e.preventDefault();
         try {
-            // await axios.post('http://localhost:5000/ViewForm4Edit', {
+            // await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm4Edit`, {
             //     Service_No:Service_No,
             //     P_State: P_State,
             //     P_District:P_District,
@@ -213,7 +213,7 @@ const getdep = async () => {
 
             if(checked == '0'){
 
-           await axios.post('http://localhost:5000/ViewForm4Edit', {
+           await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm4Edit`, {
 
                Service_No:Service_No,
                Pincode: P_Pincode,
@@ -244,7 +244,7 @@ const getdep = async () => {
 
            else{
 
-            await axios.post('http://localhost:5000/ViewForm4Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm4Edit`, {
 
                Service_No:Service_No,
                Pincode: Pincode,

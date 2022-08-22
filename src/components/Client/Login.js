@@ -15,7 +15,7 @@ const Login = () => {
     const [User_Stat, setUser_Stat] = useState('')
 
     const getUS  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getUS',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getUS`,{
 
              params:{
                Service_No: Service_No
@@ -32,14 +32,14 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/Login', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Login`, {
                 Service_No: Service_No,
                 Password: Password
             });
 
 
-            localStorage.setItem('Service_No', Service_No);
-            localStorage.setItem('V_Service_No', Service_No);
+            localStorage.setItem('Service_No`, Service_No);
+            localStorage.setItem('V_Service_No`, Service_No);
 
   getCheck();
             // navigate("/formStart");

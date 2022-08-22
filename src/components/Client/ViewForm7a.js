@@ -37,7 +37,7 @@ const ViewForm7a = () => {
 
     const getUsers = async () => {
        const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/Form7',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Form7`,
           {
               params:{D_Service_No:sn}
           });
@@ -48,14 +48,14 @@ const Edit = async (e) => {
         e.preventDefault();
         try {
             console.log(Service_No);
-            localStorage.setItem('V_Dep_Name',Dep_Name);
-            localStorage.setItem('V_Relation',Relation);
-            localStorage.setItem('V_Dep_DOB',Dep_DOB);
-            localStorage.setItem('V_Dep_Adhaar',Dep_Adhaar);
-            localStorage.setItem('V_Dep_Qualification',Dep_Qualification);
-            localStorage.setItem('V_Dep_Academic_Yr',Dep_Academic_Yr);
-            localStorage.setItem('V_Dep_Employment_Status',Dep_Employment_Status);
-            localStorage.setItem('V_Dep_Marital_Status',Dep_Marital_Status);
+            localStorage.setItem('V_Dep_Name`,Dep_Name);
+            localStorage.setItem('V_Relation`,Relation);
+            localStorage.setItem('V_Dep_DOB`,Dep_DOB);
+            localStorage.setItem('V_Dep_Adhaar`,Dep_Adhaar);
+            localStorage.setItem('V_Dep_Qualification`,Dep_Qualification);
+            localStorage.setItem('V_Dep_Academic_Yr`,Dep_Academic_Yr);
+            localStorage.setItem('V_Dep_Employment_Status`,Dep_Employment_Status);
+            localStorage.setItem('V_Dep_Marital_Status`,Dep_Marital_Status);
 
             navigate("/viewForm7b");
         } catch (error) {
@@ -71,7 +71,7 @@ const Edit = async (e) => {
     //   e.preventDefault();
     //
     //         try {
-    //           await axios.post('http://localhost:5000/resubmit',
+    //           await axios.post(`${process.env.REACT_APP_BACKEND_URL}/resubmit`,
     //           {
     //             Service_No:Service_No
     //           });
@@ -87,7 +87,7 @@ const Edit = async (e) => {
         const Resubmit = async (e) => {
             e.preventDefault();
             try {
-                await axios.post('http://localhost:5000/resubmit', {
+                await axios.post(`${process.env.REACT_APP_BACKEND_URL}/resubmit`, {
                     Service_No:Service_No
 
                 });

@@ -91,7 +91,7 @@ getName();
 const axiosJWT = axios.create();
 
 const getName  = async () => {
-       const response = await axiosJWT.get('http://localhost:5000/getName',{
+       const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
          params:{
            Service_No: Service_No
@@ -101,7 +101,7 @@ const getName  = async () => {
      }
 
  const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -113,7 +113,7 @@ const getName  = async () => {
 
 
     const getMedicals  = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/med_D',
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/med_D`,
   {
     params:{
       Service_Name:localStorage.getItem('Service_Name')
@@ -122,25 +122,25 @@ const getName  = async () => {
     setMedicals(response.data);
     }
     const getReasons = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/reason_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/reason_D');
     setReasons(response.data);
     }
 
     const getCharacters = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/char_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/char_D');
     setCharacters(response.data);
     }
 
     const getBanks = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/bank_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/bank_D');
     setBanks(response.data);
     }
 
    const getBranchs = async () => {
-      localStorage.setItem('D_Branch',Bank_Name)
+      localStorage.setItem('D_Branch`,Bank_Name)
 
       const dd=localStorage.getItem('D_Branch');
-      const response = await axiosJWT.get('http://localhost:5000/Branch_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Branch_Depend`,
           {
               params:{branches:dd}
           });
@@ -148,10 +148,10 @@ const getName  = async () => {
     }
 
 const getIfscs = async () => {
-      localStorage.setItem('D_IFSC',Branch)
+      localStorage.setItem('D_IFSC`,Branch)
 
       const dd=localStorage.getItem('D_IFSC');
-      const response = await axiosJWT.get('http://localhost:5000/IFSC_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/IFSC_Depend`,
           {
               params:{ifs:dd}
           });
@@ -260,15 +260,15 @@ const checkPension = (e) =>  {
 if(If_Pensioner==='No'){
   setVisible(false)
 
-   localStorage.setItem('PPO_No',null);
-   localStorage.setItem('Pension_Sanctioned',null);
-    localStorage.setItem('Present_Pension',null);
+   localStorage.setItem('PPO_No`,null);
+   localStorage.setItem('Pension_Sanctioned`,null);
+    localStorage.setItem('Present_Pension`,null);
 }
 // else{
 //     setVisible(true)
-//     localStorage.setItem('PPO_No',PPO_No);
-//     localStorage.setItem('Pension_Sanctioned',Pension_Sanctioned);
-//     localStorage.setItem('Present_Pension',Present_Pension);
+//     localStorage.setItem('PPO_No`,PPO_No);
+//     localStorage.setItem('Pension_Sanctioned`,Pension_Sanctioned);
+//     localStorage.setItem('Present_Pension`,Present_Pension);
 // }
 
 }
@@ -277,9 +277,9 @@ const checkPensionYes = (e) =>  {
 
 
     setVisible(true)
-    localStorage.setItem('PPO_No',PPO_No);
-    localStorage.setItem('Pension_Sanctioned',Pension_Sanctioned);
-    localStorage.setItem('Present_Pension',Present_Pension);
+    localStorage.setItem('PPO_No`,PPO_No);
+    localStorage.setItem('Pension_Sanctioned`,Pension_Sanctioned);
+    localStorage.setItem('Present_Pension`,Present_Pension);
 
 
 }
@@ -287,15 +287,15 @@ const checkPensionYes = (e) =>  {
 const checkDisPension = (e) =>  {
   setVisiible(false)
 
-   localStorage.setItem('Disability_Pension',null);
-   localStorage.setItem('Disability_Percentage',null);
+   localStorage.setItem('Disability_Pension`,null);
+   localStorage.setItem('Disability_Percentage`,null);
  }
 const checkDisPensionYes = (e) =>  {
 
     setVisiible(true)
-    localStorage.setItem('Disability_Pension',Disability_Pension);
-    localStorage.setItem('Disability_Percentage',Disability_Percentage);
-    // localStorage.setItem('Present_Pension',Present_Pension);
+    localStorage.setItem('Disability_Pension`,Disability_Pension);
+    localStorage.setItem('Disability_Percentage`,Disability_Percentage);
+    // localStorage.setItem('Present_Pension`,Present_Pension);
 }
 
 
@@ -305,24 +305,24 @@ const checkDisPensionYes = (e) =>  {
         e.preventDefault();
         try {
 
-                localStorage.setItem('Service_No',Service_No);
-                localStorage.setItem('Unit_Last_Served',Unit_Last_Served);
-                localStorage.setItem('Discharge_Date',Discharge_Date);
-                localStorage.setItem('Discharge_Reason',Discharge_Reason);
-                localStorage.setItem('Discharge_Med_Cat',Discharge_Med_Cat);
-                localStorage.setItem('Discharge_Character',Discharge_Character);
-                localStorage.setItem('Discharge_Book_No',Discharge_Book_No);
-                localStorage.setItem('If_Pensioner',If_Pensioner);
-                localStorage.setItem('PPO_No',PPO_No);
-                localStorage.setItem('Pension_Sanctioned',Pension_Sanctioned);
-                localStorage.setItem('Present_Pension',Present_Pension);
-                localStorage.setItem('If_Sanctioned_Dis_Pension',If_Sanctioned_Dis_Pension);
-                localStorage.setItem('Disability_Pension',Disability_Pension);
-                localStorage.setItem('Disability_Percentage',Disability_Percentage);
-                localStorage.setItem('Pension_AC_No',Pension_AC_No);
-                localStorage.setItem('Bank_Name',Bank_Name);
-                localStorage.setItem('Branch',Branch);
-                localStorage.setItem('IFSC',IFSC);
+                localStorage.setItem('Service_No`,Service_No);
+                localStorage.setItem('Unit_Last_Served`,Unit_Last_Served);
+                localStorage.setItem('Discharge_Date`,Discharge_Date);
+                localStorage.setItem('Discharge_Reason`,Discharge_Reason);
+                localStorage.setItem('Discharge_Med_Cat`,Discharge_Med_Cat);
+                localStorage.setItem('Discharge_Character`,Discharge_Character);
+                localStorage.setItem('Discharge_Book_No`,Discharge_Book_No);
+                localStorage.setItem('If_Pensioner`,If_Pensioner);
+                localStorage.setItem('PPO_No`,PPO_No);
+                localStorage.setItem('Pension_Sanctioned`,Pension_Sanctioned);
+                localStorage.setItem('Present_Pension`,Present_Pension);
+                localStorage.setItem('If_Sanctioned_Dis_Pension`,If_Sanctioned_Dis_Pension);
+                localStorage.setItem('Disability_Pension`,Disability_Pension);
+                localStorage.setItem('Disability_Percentage`,Disability_Percentage);
+                localStorage.setItem('Pension_AC_No`,Pension_AC_No);
+                localStorage.setItem('Bank_Name`,Bank_Name);
+                localStorage.setItem('Branch`,Branch);
+                localStorage.setItem('IFSC`,IFSC);
 
 
             navigate("/Form3");
@@ -531,7 +531,7 @@ return (
     <button className="btn my-2 my-sm-0 " type="submit"  onClick={gotoToNextStep3} >Next </button>*/}
 
     <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
     <button className=" btn" ><Link to="/Form1">Back</Link> </button>
     <button className="btn my-2 my-sm-0 " type="submit">Next </button>

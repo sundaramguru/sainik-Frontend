@@ -53,7 +53,7 @@ const Form3 = () => {
     const axiosJWT = axios.create();
 
     const getName  = async () => {
-       const response = await axiosJWT.get('http://localhost:5000/getName',{
+       const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
          params:{
            Service_No: Service_No
@@ -63,21 +63,21 @@ const Form3 = () => {
      }
 
     const getCaste = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/caste_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/caste_D');
     setCaste(response.data);
     }
 
     const getReligions = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/religions_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/religions_D');
     setReligions(response.data);
     }
    const getStates = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/state_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/state_D');
     setStates(response.data);
     }
 
     const getPlaces = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/place_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/place_D');
     setPlaces(response.data);
     }
 
@@ -194,10 +194,10 @@ const Form3 = () => {
 
 
  const getDist = async () => {
-      localStorage.setItem('Birth_State',Birth_State)
+      localStorage.setItem('Birth_State`,Birth_State)
 
       const sn=localStorage.getItem('Birth_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
@@ -209,21 +209,21 @@ const Form3 = () => {
            e.preventDefault();
            try {
 
-               localStorage.setItem('Service_No',Service_No);
-               localStorage.setItem('Father_Name',Father_Name);
-               localStorage.setItem('Mother_Name',Mother_Name);
-               localStorage.setItem('Religion',Religion);
-               localStorage.setItem('Caste_Category',Caste_Category);
-               localStorage.setItem('Birth_State',Birth_State);
-               localStorage.setItem('Birth_Dist_Surname',Birth_Dist_Surname);
-               localStorage.setItem('Birth_Place',Birth_Place);
-               localStorage.setItem('Adhaar',Adhaar);
-               localStorage.setItem('Voter_Id',Voter_Id);
-               localStorage.setItem('PAN',PAN);
-               localStorage.setItem('CSD',CSD);
-               localStorage.setItem('ECHS',ECHS);
-               localStorage.setItem('Id_Mark1',Id_Mark1);
-               localStorage.setItem('Id_Mark2',Id_Mark2);
+               localStorage.setItem('Service_No`,Service_No);
+               localStorage.setItem('Father_Name`,Father_Name);
+               localStorage.setItem('Mother_Name`,Mother_Name);
+               localStorage.setItem('Religion`,Religion);
+               localStorage.setItem('Caste_Category`,Caste_Category);
+               localStorage.setItem('Birth_State`,Birth_State);
+               localStorage.setItem('Birth_Dist_Surname`,Birth_Dist_Surname);
+               localStorage.setItem('Birth_Place`,Birth_Place);
+               localStorage.setItem('Adhaar`,Adhaar);
+               localStorage.setItem('Voter_Id`,Voter_Id);
+               localStorage.setItem('PAN`,PAN);
+               localStorage.setItem('CSD`,CSD);
+               localStorage.setItem('ECHS`,ECHS);
+               localStorage.setItem('Id_Mark1`,Id_Mark1);
+               localStorage.setItem('Id_Mark2`,Id_Mark2);
 
                navigate("/Form4");
            } catch (error) {
@@ -370,7 +370,7 @@ const Form3 = () => {
 
        <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
 <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
        <button className=" btn" ><Link to="/Form2">Back</Link> </button>
        <button className="btn my-2 my-sm-0 " type="submit">Next </button>

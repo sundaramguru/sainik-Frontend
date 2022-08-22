@@ -1,133 +1,174 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";import BootstrapTable from 'react-bootstrap-table-next'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'react-bootstrap-table-next/dist/react-bootstrap-table2.css';
-import paginationFactory from 'react-bootstrap-table2-paginator';
-import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
-import filterFactory, { textFilter , selectFilter} from 'react-bootstrap-table2-filter';
-import 'react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css';
-
+import { useNavigate } from "react-router-dom";
+import BootstrapTable from "react-bootstrap-table-next";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.css";
+import paginationFactory from "react-bootstrap-table2-paginator";
+import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css";
+import filterFactory, {
+  textFilter,
+  selectFilter,
+} from "react-bootstrap-table2-filter";
+import "react-bootstrap-table2-filter/dist/react-bootstrap-table2-filter.min.css";
 
 const Taluk = () => {
-    const [Taluk_Name, setTaluk_Name] = useState('');
-    const [Taluk_Surname, setTaluk_Surname] = useState('');
-    const [Dist, setDist] = useState('');
-    const [msg, setMsg] = useState('');
-    const navigate = useNavigate();
-    const [district, setDistrict] = useState([]);
-    const [fRsb, setfRsb] = useState([]);
+  const [Taluk_Name, setTaluk_Name] = useState("");
+  const [Taluk_Surname, setTaluk_Surname] = useState("");
+  const [Dist, setDist] = useState("");
+  const [msg, setMsg] = useState("");
+  const navigate = useNavigate();
+  const [district, setDistrict] = useState([]);
+  const [fRsb, setfRsb] = useState([]);
 
-    useEffect(() => {
+  useEffect(() => {
     getDistrict();
-    getfRsb(); 
-    }, []);
+    getfRsb();
+  }, []);
 
-const axiosJWT = axios.create();
+  const axiosJWT = axios.create();
 
-    const getDistrict = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/dist_D');
+  const getDistrict = async () => {
+    const response = await axiosJWT.get(
+      `${process.env.REACT_APP_BACKEND_URL}/dist_D`
+    );
     setDistrict(response.data);
-    }
-    const getfRsb = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/F_Taluk');
-        setfRsb(response.data);
-    }
+  };
+  const getfRsb = async () => {
+    const response = await axiosJWT.get(
+      `${process.env.REACT_APP_BACKEND_URL}/F_Taluk`
+    );
+    setfRsb(response.data);
+  };
 
-
-const columns = [
- {dataField: 'id', text: 'Taluk Id', sort: true, filter: textFilter()},
- {dataField: 'Taluk_Name', text: 'Taluk ', sort: true , filter: textFilter()},
- {dataField: 'Taluk_Surname', text: 'Taluk Surname', sort: true,filter: textFilter() },
- {dataField: 'Dist_Surname', text: 'District Surname', sort: true , filter: textFilter()},
-
- ]
+  const columns = [
+    { dataField: "id", text: "Taluk Id", sort: true, filter: textFilter() },
+    {
+      dataField: "Taluk_Name",
+      text: "Taluk ",
+      sort: true,
+      filter: textFilter(),
+    },
+    {
+      dataField: "Taluk_Surname",
+      text: "Taluk Surname",
+      sort: true,
+      filter: textFilter(),
+    },
+    {
+      dataField: "Dist_Surname",
+      text: "District Surname",
+      sort: true,
+      filter: textFilter(),
+    },
+  ];
 
   const pagination = paginationFactory({
     page: 1,
     sizePerPage: 5,
-    lastPageText: '>>',
-    firstPageText: '<<',
-    nextPageText: '>',
-    prePageText: '<',
+    lastPageText: ">>",
+    firstPageText: "<<",
+    nextPageText: ">",
+    prePageText: "<",
     showTotal: true,
     alwaysShowAllBtns: true,
-    onPageChange: function(page,sizePerPage){
-    console.log('page',page);
-    console.log('sizePerPage',sizePerPage);
-
+    onPageChange: function (page, sizePerPage) {
+      console.log("page", page);
+      console.log("sizePerPage", sizePerPage);
     },
-    onSizePerPageChange: function(page, sizePerPage){
-    console.log('page',page);
-    console.log('sizePerPage',sizePerPage);
+    onSizePerPageChange: function (page, sizePerPage) {
+      console.log("page", page);
+      console.log("sizePerPage", sizePerPage);
+    },
+  });
+  const Taluk = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/I_taluk`, {
+        Taluk_Name: Taluk_Name,
+        Taluk_Surname: Taluk_Surname,
+        Dist: Dist,
+      });
+    } catch (error) {
+      if (error.response) {
+        setMsg(error.response.data.msg);
+      }
     }
+  };
 
-});
-    const Taluk = async (e) => {
-        e.preventDefault();
-        try {
-            await axios.post('http://localhost:5000/I_taluk', {
-                Taluk_Name: Taluk_Name,
-                Taluk_Surname:Taluk_Surname,
-                Dist:Dist
-
-            });
-        } catch (error) {
-            if (error.response) {
-                setMsg(error.response.data.msg);
-            }
-        }
-    }
-
-    return (
-      <div className="center">
+  return (
+    <div className="center">
       <div class="wrapper fadeInDown col-lg-5">
-      <div id="formContent">
+        <div id="formContent">
+          <form onSubmit={Taluk}>
+            <h1 className="insert-pad">
+              <strong>Taluk</strong>
+            </h1>
+            <br />
+            <p className="has-text-centered">{msg}</p>
+            <br />
 
-        <form onSubmit={Taluk}>
-       
-        <h1 className='insert-pad'><strong>Taluk</strong></h1><br/>
-         <p className="has-text-centered">{msg}</p><br/>
-
-        <input type="text" id="login" class="fadeIn second textInput"  placeholder="Taluk_Name"value={Taluk_Name} onChange={(e) => setTaluk_Name(e.target.value)} required/>
-        <input type="text" id="login" class="fadeIn second textInput"  placeholder="Taluk_Surname"value={Taluk_Surname} onChange={(e) => setTaluk_Surname(e.target.value)} required/>
-        <div >
-        <select id="login"className="fadeIn second textInput" value ={Dist} onChange={(e)=> setDist(e.target.value)} required>
-        <option >Select District Name</option>
-             {district.map((user, index) => (
-             <option key={user.id}value={user.District}>{user.District}</option>
-             ))}
-        </select>
+            <input
+              type="text"
+              id="login"
+              class="fadeIn second textInput"
+              placeholder="Taluk_Name"
+              value={Taluk_Name}
+              onChange={(e) => setTaluk_Name(e.target.value)}
+              required
+            />
+            <input
+              type="text"
+              id="login"
+              class="fadeIn second textInput"
+              placeholder="Taluk_Surname"
+              value={Taluk_Surname}
+              onChange={(e) => setTaluk_Surname(e.target.value)}
+              required
+            />
+            <div>
+              <select
+                id="login"
+                className="fadeIn second textInput"
+                value={Dist}
+                onChange={(e) => setDist(e.target.value)}
+                required
+              >
+                <option>Select District Name</option>
+                {district.map((user, index) => (
+                  <option key={user.id} value={user.District}>
+                    {user.District}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <input
+              type="submit"
+              class="fadeIn fourth submitInput"
+              value="Enter"
+            />
+          </form>
         </div>
-          <input type="submit" class="fadeIn fourth submitInput" value="Enter" />
-        </form>
-
-      </div>
       </div>
       <div className="col-lg-7">
-
         <BootstrapTable
-             bootstrap4
-             responsive
-             keyField = 'id'
-             columns = {columns}
-             data= {fRsb}
-             pagination = {pagination}
-             filter = {filterFactory()}
-
-             />
-
-
-
+          bootstrap4
+          responsive
+          keyField="id"
+          columns={columns}
+          data={fRsb}
+          pagination={pagination}
+          filter={filterFactory()}
+        />
       </div>
+    </div>
+  );
+};
 
-</div>
-    )
-}
+export default Taluk;
 
-export default Taluk
-
-{/*       <div class="col-md-9 mb-4">
+{
+  /*       <div class="col-md-9 mb-4">
 
     <div class="card example-1 scrollbar-ripe-malinka">
       <div class="card-body">
@@ -160,5 +201,5 @@ export default Taluk
         </div>
     </div>
 
-  </div>*/}
-
+  </div>*/
+}

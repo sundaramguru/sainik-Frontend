@@ -126,7 +126,7 @@ const ViewForm6Edit = () => {
 
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -151,7 +151,7 @@ const uploadImg = async (e) => {
 
    try {
      const res = await axios.post(
-       "http://localhost:5000/upload_SImg",
+       "${process.env.REACT_APP_BACKEND_URL}/upload_SImg",
        formData
      );
      console.log(res);
@@ -165,7 +165,7 @@ const uploadImg = async (e) => {
     const axiosJWT = axios.create();
 
          const getCivil = async () => {
-     const response = await axiosJWT.get('http://localhost:5000/civil_D');
+     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/civil_D');
     setCivil(response.data);
     }
 
@@ -268,7 +268,7 @@ const creatSRow = async (e) => {
 
    try {
      const res = await axios.post(
-       "http://localhost:5000/creatSRow",
+       "${process.env.REACT_APP_BACKEND_URL}/creatSRow",
        formData
      );
      console.log(res);
@@ -366,12 +366,12 @@ const onMaritalStatusChange = (e) =>  {
 }
 
 
-const SECTOR = ['State', 'Central', 'PSU', 'Private', 'Govt.Societies'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widow/Widower'];
+const SECTOR = ['State`, 'Central`, 'PSU`, 'Private`, 'Govt.Societies'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widow/Widower'];
 
 const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform6dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform6dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -381,7 +381,7 @@ const getdep = async () => {
     const ViewForm6Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm6Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm6Edit`, {
                  Service_No:Service_No,
                 Marital_Status:Marital_Status,
                 Marriage_Date: Marriage_Date,

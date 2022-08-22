@@ -50,7 +50,7 @@ useEffect(() => {
      }, [CDate] , [DOB1]);
 
      const getName  = async () => {
-            const response = await axiosJWT.get('http://localhost:5000/getName',{
+            const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
               params:{
                 Service_No: Service_No
@@ -60,7 +60,7 @@ useEffect(() => {
           }
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -73,8 +73,8 @@ const getDDOB  = async () => {
 
 
 
-const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widower/Widow'];
+const RELATION = ['Father`, 'Mother`, 'Daughter`, 'Son'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widower/Widow'];
 
 const onAcademicChange = (e) =>  {
     const p = /^[0-9]+$/;
@@ -127,7 +127,7 @@ const onDepNameChange = (e) =>  {
 
     const getdep = async () => {
       const sn=localStorage.getItem('V_Dep_Name');
-      const response = await axiosJWT.get('http://localhost:5000/form8dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/form8dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -137,7 +137,7 @@ const onDepNameChange = (e) =>  {
  const Form7Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/Form7Edit', { // TO  UPDATE
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Form7Edit`, { // TO  UPDATE
                 Service_No:Service_No,
                 checkDep_Name: localStorage.getItem('V_Dep_Name'),
                 Dep_Name: Dep_Name,
@@ -160,7 +160,7 @@ const onDepNameChange = (e) =>  {
     const Delete = async (e) => {
         e.preventDefault();
         try {
-          await axios.post('http://localhost:5000/Form7Delete', {
+          await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Form7Delete`, {
               Service_No:Service_No,
               checkDep_Name: Dep_Name,
               Relation:Relation
@@ -250,7 +250,7 @@ const onDepNameChange = (e) =>  {
     </div>
     <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
     <div className="col-lg-12 right-align " >
-    <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+    <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
     </div>
     <button className=" btn" ><Link to="/Form7">Back</Link> </button>
     <button className="btn my-2 my-sm-0 "  onClick={Form7Edit}>Edit </button>

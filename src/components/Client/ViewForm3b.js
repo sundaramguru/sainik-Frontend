@@ -57,21 +57,21 @@ const ViewForm3Edit = () => {
     const axiosJWT = axios.create();
 
     const getCaste = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/caste_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/caste_D');
     setCaste(response.data);
     }
 
     const getReligions = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/religions_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/religions_D');
     setReligions(response.data);
     }
    const getStates = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/state_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/state_D');
     setStates(response.data);
     }
 
     const getPlaces = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/place_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/place_D');
     setPlaces(response.data);
     }
 
@@ -156,10 +156,10 @@ const ViewForm3Edit = () => {
 
 
  const getDist = async () => {
-      localStorage.setItem('Birth_State',Birth_State)
+      localStorage.setItem('Birth_State`,Birth_State)
 
       const sn=localStorage.getItem('Birth_State');
-      const response = await axiosJWT.get('http://localhost:5000/District_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/District_Depend`,
           {
               params:{state:sn}
           });
@@ -169,7 +169,7 @@ const ViewForm3Edit = () => {
 
 const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform3dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform3dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -180,7 +180,7 @@ const getdep = async () => {
      const ViewForm3Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm3Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm3Edit`, {
                 Service_No:Service_No,
                 Father_Name: Father_Name,
                 Mother_Name: Mother_Name,

@@ -39,7 +39,7 @@ const Form7 = () => {
 
     const getUsers = async () => {
      const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/Form7',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Form7`,
           {
               params:{D_Service_No:sn}
           });
@@ -50,14 +50,14 @@ const Edit = async (e) => {
         e.preventDefault();
         try {
             console.log(Service_No);
-            localStorage.setItem('V_Dep_Name',Dep_Name);
-            localStorage.setItem('V_Relation',Relation);
-            localStorage.setItem('V_Dep_DOB',Dep_DOB);
-            localStorage.setItem('V_Dep_Adhaar',Dep_Adhaar);
-            localStorage.setItem('V_Dep_Qualification',Dep_Qualification);
-            localStorage.setItem('V_Dep_Academic_Yr',Dep_Academic_Yr);
-            localStorage.setItem('V_Dep_Employment_Status',Dep_Employment_Status);
-            localStorage.setItem('V_Dep_Marital_Status',Dep_Marital_Status);
+            localStorage.setItem('V_Dep_Name`,Dep_Name);
+            localStorage.setItem('V_Relation`,Relation);
+            localStorage.setItem('V_Dep_DOB`,Dep_DOB);
+            localStorage.setItem('V_Dep_Adhaar`,Dep_Adhaar);
+            localStorage.setItem('V_Dep_Qualification`,Dep_Qualification);
+            localStorage.setItem('V_Dep_Academic_Yr`,Dep_Academic_Yr);
+            localStorage.setItem('V_Dep_Employment_Status`,Dep_Employment_Status);
+            localStorage.setItem('V_Dep_Marital_Status`,Dep_Marital_Status);
 
             navigate("/form7Edit");
         } catch (error) {
@@ -70,7 +70,7 @@ const Edit = async (e) => {
 const Delete = async (e) => {
         e.preventDefault();
         try {
-          await axios.post('http://localhost:5000/Form7Delete', {
+          await axios.post(`${process.env.REACT_APP_BACKEND_URL}/Form7Delete`, {
               Service_No:Service_No,
               checkDep_Name: Dep_Name
 
@@ -84,7 +84,7 @@ const Delete = async (e) => {
     }
 
     const getName  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getName',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
              params:{
                Service_No: Service_No
@@ -97,7 +97,7 @@ const Delete = async (e) => {
 const Form7 = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/forms', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/forms`, {
 //form1
                 Service_No:localStorage.getItem('Service_No'),
                 Service_Name:localStorage.getItem('Service_Name'),
@@ -252,7 +252,7 @@ Reg_Type:localStorage.getItem('Reg_Type')
 const Form7Delete = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/form7delete', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/form7delete`, {
 
                  Service_No:localStorage.getItem('Service_No'),
                  Dep_Name: localStorage.getItem('Dep_Name'),
@@ -284,14 +284,14 @@ const Form7Delete = async (e) => {
         e.preventDefault();
         try {
 
-                localStorage.setItem('Service_No',Service_No);
-                localStorage.setItem('Dep_Name',Dep_Name);
-                localStorage.setItem('Relation',Relation);
-                localStorage.setItem('Dep_DOB',Dep_DOB);
-                localStorage.setItem('Dep_Adhaar',Dep_Adhaar);
-                localStorage.setItem('Dep_Qualification',Dep_Qualification);
-                localStorage.setItem('Dep_Academic_Yr',Dep_Academic_Yr);
-                localStorage.setItem('Dep_Employment_Status',Dep_Employment_Status);
+                localStorage.setItem('Service_No`,Service_No);
+                localStorage.setItem('Dep_Name`,Dep_Name);
+                localStorage.setItem('Relation`,Relation);
+                localStorage.setItem('Dep_DOB`,Dep_DOB);
+                localStorage.setItem('Dep_Adhaar`,Dep_Adhaar);
+                localStorage.setItem('Dep_Qualification`,Dep_Qualification);
+                localStorage.setItem('Dep_Academic_Yr`,Dep_Academic_Yr);
+                localStorage.setItem('Dep_Employment_Status`,Dep_Employment_Status);
         } catch (error) {
             if (error.response) {
                 setMsg(error.response.data.msg);
@@ -495,7 +495,7 @@ const Form7 = () => {
     const Form7 = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/u_dependent_details', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/u_dependent_details`, {
                 Service_No:Service_No,
                 Dep_Name: Dep_Name,
                 Relation:Relation,

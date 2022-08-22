@@ -49,7 +49,7 @@ useEffect(() => {
 
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -62,8 +62,8 @@ const getDDOB  = async () => {
 
 
 
-const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widower/Widow'];
+const RELATION = ['Father`, 'Mother`, 'Daughter`, 'Son'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widower/Widow'];
 
 const onAcademicChange = (e) =>  {
     const p = /^[0-9]+$/;
@@ -116,7 +116,7 @@ const onDepNameChange = (e) =>  {
 
     const getdep = async () => {
       const sn=localStorage.getItem('V_Dep_Name');
-      const response = await axiosJWT.get('http://localhost:5000/form8dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/form8dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -126,7 +126,7 @@ const onDepNameChange = (e) =>  {
  const ViewForm7Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm7Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm7Edit`, {
                 Service_No:Service_No,
                 checkDep_Name: localStorage.getItem('V_Dep_Name'),
                 Dep_Name: Dep_Name,
@@ -138,8 +138,8 @@ const onDepNameChange = (e) =>  {
                 Dep_Employment_Status: Dep_Employment_Status,
                 Dep_Marital_Status: Dep_Marital_Status
             });
-            localStorage.setItem('V_Dep_Name',Dep_Name)
-            localStorage.setItem('V_Relation',Relation)
+            localStorage.setItem('V_Dep_Name`,Dep_Name)
+            localStorage.setItem('V_Relation`,Relation)
 
  navigate("/ViewFormDepDoc");
         } catch (error) {

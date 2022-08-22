@@ -77,12 +77,12 @@ useEffect(() => {
 const axiosJWT = axios.create();
     const getCivil = async () => {
     // const response = await axiosJWT.get(`${process.env.REACT_APP_DOMAIN}/civil_D`);
-     const response = await axiosJWT.get('http://localhost:5000/civil_D');
+     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/civil_D');
     setCivil(response.data);
     }
 
     const getName  = async () => {
-       const response = await axiosJWT.get('http://localhost:5000/getName',{
+       const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
          params:{
            Service_No: Service_No
@@ -169,68 +169,68 @@ const checkEmployed = (e) =>  {
   // setVisible(false)
   setVisible(true)
   setvisibles(false)
-  localStorage.setItem('Pres_Desg',Pres_Desg);
-  localStorage.setItem('Dept',Dept);
-  localStorage.setItem('Sector',Sector);
-  localStorage.setItem('Employer',Employer);
-  localStorage.setItem('Month_Income',Month_Income);
-  localStorage.setItem('Official_No',Official_No);
-   localStorage.setItem('Desg_Retire',null);
-   localStorage.setItem('Retire_Date',null);
-   localStorage.setItem('Civil_PPO_No',null);
+  localStorage.setItem('Pres_Desg`,Pres_Desg);
+  localStorage.setItem('Dept`,Dept);
+  localStorage.setItem('Sector`,Sector);
+  localStorage.setItem('Employer`,Employer);
+  localStorage.setItem('Month_Income`,Month_Income);
+  localStorage.setItem('Official_No`,Official_No);
+   localStorage.setItem('Desg_Retire`,null);
+   localStorage.setItem('Retire_Date`,null);
+   localStorage.setItem('Civil_PPO_No`,null);
 }
 
 const checkRetired = (e) =>  {
   setVisible(true)
   setvisibles(true)
-  localStorage.setItem('Pres_Desg',Pres_Desg);
-  localStorage.setItem('Dept',Dept);
-  localStorage.setItem('Sector',Sector);
-  localStorage.setItem('Employer',Employer);
-  localStorage.setItem('Month_Income',Month_Income);
-  localStorage.setItem('Official_No',Official_No);
-    localStorage.setItem('Desg_Retire',Desg_Retire);
-    localStorage.setItem('Retire_Date',Retire_Date);
-    localStorage.setItem('Civil_PPO_No',Civil_PPO_No);
+  localStorage.setItem('Pres_Desg`,Pres_Desg);
+  localStorage.setItem('Dept`,Dept);
+  localStorage.setItem('Sector`,Sector);
+  localStorage.setItem('Employer`,Employer);
+  localStorage.setItem('Month_Income`,Month_Income);
+  localStorage.setItem('Official_No`,Official_No);
+    localStorage.setItem('Desg_Retire`,Desg_Retire);
+    localStorage.setItem('Retire_Date`,Retire_Date);
+    localStorage.setItem('Civil_PPO_No`,Civil_PPO_No);
 }
 const checkUnEmployed = (e) =>  {
   setVisible(false)
   setvisibles(false)
-  localStorage.setItem('Pres_Desg',null);
-  localStorage.setItem('Dept',null);
-  localStorage.setItem('Sector',null);
-  localStorage.setItem('Employer',null);
-  localStorage.setItem('Month_Income',null);
-  localStorage.setItem('Official_No',null);
-  localStorage.setItem('Desg_Retire',null);
-  localStorage.setItem('Retire_Date',null);
-  localStorage.setItem('Civil_PPO_No',null);
+  localStorage.setItem('Pres_Desg`,null);
+  localStorage.setItem('Dept`,null);
+  localStorage.setItem('Sector`,null);
+  localStorage.setItem('Employer`,null);
+  localStorage.setItem('Month_Income`,null);
+  localStorage.setItem('Official_No`,null);
+  localStorage.setItem('Desg_Retire`,null);
+  localStorage.setItem('Retire_Date`,null);
+  localStorage.setItem('Civil_PPO_No`,null);
 }
 
 
 
 
-const SECTOR = ['State', 'Central', 'PSU', 'Private', 'Govt.Societies'];
+const SECTOR = ['State`, 'Central`, 'PSU`, 'Private`, 'Govt.Societies'];
 
 const Form5 = async (e) => {
     e.preventDefault();
     try {
 
 
-                localStorage.setItem('Service_No',Service_No);
-                localStorage.setItem('Civil_Qualification',Civil_Qualification);
-                localStorage.setItem('Addi_Course',Addi_Course);
-                localStorage.setItem('Equi_Test',Equi_Test);
-                localStorage.setItem('Civil_Emp_Status',Civil_Emp_Status);
-                localStorage.setItem('Pres_Desg',Pres_Desg);
-                localStorage.setItem('Dept',Dept);
-                localStorage.setItem('Sector',Sector);
-                localStorage.setItem('Employer',Employer);
-                localStorage.setItem('Month_Income',Month_Income);
-                localStorage.setItem('Official_No',Official_No);
-                localStorage.setItem('Desg_Retire',Desg_Retire);
-                localStorage.setItem('Retire_Date',Retire_Date);
-                localStorage.setItem('Civil_PPO_No',Civil_PPO_No);
+                localStorage.setItem('Service_No`,Service_No);
+                localStorage.setItem('Civil_Qualification`,Civil_Qualification);
+                localStorage.setItem('Addi_Course`,Addi_Course);
+                localStorage.setItem('Equi_Test`,Equi_Test);
+                localStorage.setItem('Civil_Emp_Status`,Civil_Emp_Status);
+                localStorage.setItem('Pres_Desg`,Pres_Desg);
+                localStorage.setItem('Dept`,Dept);
+                localStorage.setItem('Sector`,Sector);
+                localStorage.setItem('Employer`,Employer);
+                localStorage.setItem('Month_Income`,Month_Income);
+                localStorage.setItem('Official_No`,Official_No);
+                localStorage.setItem('Desg_Retire`,Desg_Retire);
+                localStorage.setItem('Retire_Date`,Retire_Date);
+                localStorage.setItem('Civil_PPO_No`,Civil_PPO_No);
 
 
         navigate("/DocForm");
@@ -394,7 +394,7 @@ const Form5 = async (e) => {
 
     <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
 <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
     <button className=" btn" ><Link to="/Form4">Back</Link> </button>
     <button className="btn my-2 my-sm-0 " type="submit">Next </button>

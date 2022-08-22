@@ -49,7 +49,7 @@ const ViewForm1a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -58,7 +58,7 @@ const ViewForm1a = () => {
     }
     const getService = async () => {
          const sn = localStorage.getItem('getService_Name')
-        const response = await axiosJWT.get('http://localhost:5000/getService_Name',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getService_Name`,{
           params:{
             getService_Name: sn
           }
@@ -66,27 +66,27 @@ const ViewForm1a = () => {
         setService_Name(response.data);
     }
 
-    localStorage.setItem('V_Service_No',Service_No);
+    localStorage.setItem('V_Service_No`,Service_No);
 
     const Edit1 = async (e) => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-            localStorage.setItem('V_Service_No',Service_No);
+            localStorage.setItem('V_Service_No`,Service_No);
 
-                localStorage.setItem('V_Service_Name',Service_Name);
-                localStorage.setItem('V_Corps_Name',Corps_Name);
-                localStorage.setItem('V_Record_Office_Name',Record_Office_Name);
-                localStorage.setItem('V_Group_Name',Group_Name);
-                localStorage.setItem('V_Trade_Name',Trade_Name);
-                localStorage.setItem('V_Rank_Category',Rank_Category);
-                localStorage.setItem('V_Rank_Name',Rank_Name);
-                localStorage.setItem('V_Gender',Gender);
-                localStorage.setItem('V_DOB',DOB);
-                localStorage.setItem('V_Enroll_Date',Enroll_Date);
-                localStorage.setItem('V_World_War2',World_War2);
-                localStorage.setItem('V_Opt_Attend',Opt_Attend);
-                localStorage.setItem('V_Deco',Deco);
+                localStorage.setItem('V_Service_Name`,Service_Name);
+                localStorage.setItem('V_Corps_Name`,Corps_Name);
+                localStorage.setItem('V_Record_Office_Name`,Record_Office_Name);
+                localStorage.setItem('V_Group_Name`,Group_Name);
+                localStorage.setItem('V_Trade_Name`,Trade_Name);
+                localStorage.setItem('V_Rank_Category`,Rank_Category);
+                localStorage.setItem('V_Rank_Name`,Rank_Name);
+                localStorage.setItem('V_Gender`,Gender);
+                localStorage.setItem('V_DOB`,DOB);
+                localStorage.setItem('V_Enroll_Date`,Enroll_Date);
+                localStorage.setItem('V_World_War2`,World_War2);
+                localStorage.setItem('V_Opt_Attend`,Opt_Attend);
+                localStorage.setItem('V_Deco`,Deco);
 
             navigate("/viewForm1b");
         } catch (error) {

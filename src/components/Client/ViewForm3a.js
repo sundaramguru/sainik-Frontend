@@ -43,7 +43,7 @@ const ViewForm3a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -56,21 +56,21 @@ const ViewForm3a = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-                localStorage.setItem('V_Father_Name',Father_Name);
-                localStorage.setItem('V_Mother_Name',Mother_Name);
-                localStorage.setItem('V_Religion',Religion);
-                localStorage.setItem('V_Caste_Category',Caste_Category);
+                localStorage.setItem('V_Father_Name`,Father_Name);
+                localStorage.setItem('V_Mother_Name`,Mother_Name);
+                localStorage.setItem('V_Religion`,Religion);
+                localStorage.setItem('V_Caste_Category`,Caste_Category);
 
-                localStorage.setItem('V_Birth_State',Birth_State);
-                localStorage.setItem('V_Birth_Dist_Surname',Birth_Dist_Surname);
-                localStorage.setItem('V_Birth_Place',Birth_Place);
-                localStorage.setItem('V_Adhaar',Adhaar);
-                localStorage.setItem('V_Voter_Id',Voter_Id);
-                localStorage.setItem('V_PAN',PAN);
-                localStorage.setItem('V_CSD',CSD);
-                localStorage.setItem('V_ECHS',ECHS);
-                localStorage.setItem('V_Id_Mark1',Id_Mark1);
-                localStorage.setItem('V_Id_Mark2',Id_Mark2);
+                localStorage.setItem('V_Birth_State`,Birth_State);
+                localStorage.setItem('V_Birth_Dist_Surname`,Birth_Dist_Surname);
+                localStorage.setItem('V_Birth_Place`,Birth_Place);
+                localStorage.setItem('V_Adhaar`,Adhaar);
+                localStorage.setItem('V_Voter_Id`,Voter_Id);
+                localStorage.setItem('V_PAN`,PAN);
+                localStorage.setItem('V_CSD`,CSD);
+                localStorage.setItem('V_ECHS`,ECHS);
+                localStorage.setItem('V_Id_Mark1`,Id_Mark1);
+                localStorage.setItem('V_Id_Mark2`,Id_Mark2);
 
             navigate("/viewForm3b");
         } catch (error) {

@@ -1,41 +1,55 @@
-import React from 'react'
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const Logout = async () => {
-        // try {
-        //     await axios.delete('http://localhost:5000/logout');
-        //     navigate("/");
-        // } catch (error) {
-        //     console.log(error);
-        // }
-        navigate("/");
-    }
+  const Logout = async () => {
+    // try {
+    //     await axios.delete(`${process.env.REACT_APP_BACKEND_URL}/logout`);
+    //     navigate("/");
+    // } catch (error) {
+    //     console.log(error);
+    // }
+    navigate("/");
+  };
 
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light py-0">
-<div className="brand-pad">
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light py-0">
+      <div className="brand-pad">
         <a className="navbar-brand " href="#">
-            <img src="https://apsainik.org.in/assets/img/sainiklogo.png" width="30" height="28" alt="logo" />
+          <img
+            src="https://apsainik.org.in/assets/img/sainiklogo.png"
+            width="30"
+            height="28"
+            alt="logo"
+          />
         </a>
-</div>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active brand-pad">
-              <a class="nav-link " href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0 logout-pad">
-            <button onClick={Logout} class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
-          </form>
-      </nav>
-    )
-}
+      </div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active brand-pad">
+          <a class="nav-link " href="/">
+            Home <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 logout-pad">
+        <button
+          onClick={Logout}
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+        >
+          Logout
+        </button>
+      </form>
+    </nav>
+  );
+};
 
-export default Navbar
-{/*<nav className="navbar  navbar-light bg-light navbar-fixed-top">
+export default Navbar;
+{
+  /*<nav className="navbar  navbar-light bg-light navbar-fixed-top">
     <div className="navbar-header">
   <ul className="nav navbar-nav navbar-left">
 
@@ -52,9 +66,11 @@ export default Navbar
 
   </ul>
 </div>
-</nav>*/}
+</nav>*/
+}
 
-{/*          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+{
+  /*          <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
   <div className="container">
     <div className="navbar-brand d-flex justify-content-start align-items-start">
@@ -86,9 +102,11 @@ export default Navbar
     </div>
 
 </div>
-</nav>*/}
+</nav>*/
+}
 
-{/*<nav className="navbar is-light" role="navigation" aria-label="main navigation">
+{
+  /*<nav className="navbar is-light" role="navigation" aria-label="main navigation">
     <div className="container">
         <div className="navbar-brand">
             <a className="navbar-item" href="https://bulma.io">
@@ -120,8 +138,10 @@ export default Navbar
             </div>
         </div>
     </div>
-</nav>*/}
-{/* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+</nav>*/
+}
+{
+  /* <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -143,4 +163,5 @@ export default Navbar
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>
-</nav> */}
+</nav> */
+}

@@ -27,13 +27,13 @@ getName();
     Back()
     });
 
-localStorage.setItem('V_Service_No', Service_No)
+localStorage.setItem('V_Service_No`, Service_No)
     const axiosJWT = axios.create();
 
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -41,7 +41,7 @@ localStorage.setItem('V_Service_No', Service_No)
         setUsers(response.data);
     }
     const getName  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getName',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
              params:{
                Service_No: Service_No
@@ -50,11 +50,11 @@ localStorage.setItem('V_Service_No', Service_No)
            setName(response.data);
 
          }
-         localStorage.setItem('V_Name', Name)
+         localStorage.setItem('V_Name`, Name)
 
 
          const Back  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getReg_Type',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getReg_Type`,{
 
              params:{
                Service_No: Service_No

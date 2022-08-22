@@ -58,7 +58,7 @@ const onEnrolldChange = (e) =>  {
 
 
 const PdfGenerate = (e) =>  {
-var doc = new jsPDF('portrait','px','a4','false');
+var doc = new jsPDF('portrait`,'px`,'a4`,'false');
 doc.setLineWidth(1);
 doc.html(document.querySelector("#content"),{
 callback: function(pdf){
@@ -72,7 +72,7 @@ pdf.save('a.pdf');
 const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_kgpr6mm', 'mailid_template', e.target, 'HaFC-IRHQSI8N8--K')
+    emailjs.sendForm('service_kgpr6mm`, 'mailid_template`, e.target, 'HaFC-IRHQSI8N8--K')
       .then((result) => {
           console.log(result.text);
       }, (error) => {
@@ -82,7 +82,7 @@ const sendEmail = (e) => {
   };
 
 const capt = (e) => {
-    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0'];
+    var alpha = ['A`,'B`,'C`,'D`,'E`,'F`,'G`,'H`,'I`,'J`,'K`,'L`,'M`,'N`,'O`,'P`,'Q`,'R`,'S`,'T`,'U`,'V`,'W`,'X`,'Y`,'Z`,'a`,'b`,'c`,'d`,'e`,'f`,'g`,'h`,'i`,'j`,'k`,'l`,'m`,'n`,'o`,'p`,'q`,'r`,'s`,'t`,'u`,'v`,'w`,'x`,'y`,'z`,'1`,'2`,'3`,'4`,'5`,'6`,'7`,'8`,'9`,'0'];
     var a= alpha[Math.floor(Math.random()*62)];
     var b= alpha[Math.floor(Math.random()*62)];
     var c= alpha[Math.floor(Math.random()*62)];

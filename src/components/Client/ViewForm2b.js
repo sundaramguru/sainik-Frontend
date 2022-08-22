@@ -100,7 +100,7 @@ const ViewForm2Edit = () => {
 const axiosJWT = axios.create();
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -110,7 +110,7 @@ const getDDOB  = async () => {
       }
 
 const getMedicals  = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/med_D',
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/med_D`,
   {
     params:{
       Service_Name:localStorage.getItem('Service_Name')
@@ -120,25 +120,25 @@ const getMedicals  = async () => {
   }
 
 const getReasons = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/reason_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/reason_D');
     setReasons(response.data);
     }
 
 const getCharacters = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/char_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/char_D');
     setCharacters(response.data);
     }
 
 const getBanks = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/bank_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/bank_D');
     setBanks(response.data);
     }
 
 const getBranchs = async () => {
-      localStorage.setItem('D_Branch',Bank_Name)
+      localStorage.setItem('D_Branch`,Bank_Name)
 
       const dd=localStorage.getItem('D_Branch');
-      const response = await axiosJWT.get('http://localhost:5000/Branch_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Branch_Depend`,
           {
               params:{branches:dd}
           });
@@ -146,10 +146,10 @@ const getBranchs = async () => {
     }
 
 const getIfscs = async () => {
-      localStorage.setItem('D_IFSC',Branch)
+      localStorage.setItem('D_IFSC`,Branch)
 
       const dd=localStorage.getItem('D_IFSC');
-      const response = await axiosJWT.get('http://localhost:5000/IFSC_Depend',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/IFSC_Depend`,
           {
               params:{ifs:dd}
           });
@@ -159,7 +159,7 @@ const getIfscs = async () => {
 
 const getdep = async () => {
       const sn=localStorage.getItem('Service_No');
-      const response = await axiosJWT.get('http://localhost:5000/viewform2dep',
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/viewform2dep`,
           {
               params:{D_Service_No:sn}
           });
@@ -273,7 +273,7 @@ const onDisabilityPercentageChange = (e) =>  {
     const ViewForm2Edit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewForm2Edit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewForm2Edit`, {
                 Service_No:Service_No,
                 Unit_Last_Served: Unit_Last_Served,
                 Discharge_Date:Discharge_Date,

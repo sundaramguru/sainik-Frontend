@@ -34,7 +34,7 @@ const ViewFormDepDoc = () => {
       const sn = localStorage.getItem('Service_No')
       const dn=localStorage.getItem('V_Dep_Name')
       const r=localStorage.getItem('V_Relation')
-      const response = await axiosJWT.get('http://localhost:5000/UserDepViewFormDoc',{
+      const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/UserDepViewFormDoc`,{
         params:{
           V_Service_No: sn,
           V_Dep_Name:dn,
@@ -139,9 +139,9 @@ const ViewFormDepDoc = () => {
         <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
         <button className=" btn" ><Link to="/ViewForm7b">Back</Link> </button>
         <button className="btn my-2 my-sm-0 " onClick ={function EditMouseHover(){
-          localStorage.setItem('Service_No',Service_No)
-          localStorage.setItem('V_Dep_Name',users[6])
-          localStorage.setItem('V_Relation',users[7])
+          localStorage.setItem('Service_No`,Service_No)
+          localStorage.setItem('V_Dep_Name`,users[6])
+          localStorage.setItem('V_Relation`,users[7])
       }}><Link to="/ViewFormDepDocb">Edit</Link> </button>
         </div>
 </div>

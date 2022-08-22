@@ -14,7 +14,7 @@ const ULogin = () => {
     const [msg, setMsg] = useState('');
 
 const capt = (e) => {
-    var alpha = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0'];
+    var alpha = ['A`,'B`,'C`,'D`,'E`,'F`,'G`,'H`,'I`,'J`,'K`,'L`,'M`,'N`,'O`,'P`,'Q`,'R`,'S`,'T`,'U`,'V`,'W`,'X`,'Y`,'Z`,'a`,'b`,'c`,'d`,'e`,'f`,'g`,'h`,'i`,'j`,'k`,'l`,'m`,'n`,'o`,'p`,'q`,'r`,'s`,'t`,'u`,'v`,'w`,'x`,'y`,'z`,'1`,'2`,'3`,'4`,'5`,'6`,'7`,'8`,'9`,'0'];
     var a= alpha[Math.floor(Math.random()*62)];
     var b= alpha[Math.floor(Math.random()*62)];
     var c= alpha[Math.floor(Math.random()*62)];
@@ -54,12 +54,12 @@ setAltertMsg('')
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ULogin', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ULogin`, {
                 Service_No: Service_No,
                 Password: Password
             });
-            localStorage.setItem('Service_No', Service_No);
-            localStorage.setItem('codes', codes);
+            localStorage.setItem('Service_No`, Service_No);
+            localStorage.setItem('codes`, codes);
 
             navigate("/form1");
         } catch (error) {
@@ -81,8 +81,8 @@ setAltertMsg('')
          <form onSubmit={Auth}>
           <span style=
            {{
-            fontWeight: 'bold',
-            color: 'red',
+            fontWeight: 'bold`,
+            color: 'red`,
            }}>{ErrorMessage}</span>
 
          <input type="text" id="login" class="fadeIn second textInput" name="login"
@@ -91,8 +91,8 @@ setAltertMsg('')
 
          <span style=
            {{
-            fontWeight: 'bold',
-            color: 'red',
+            fontWeight: 'bold`,
+            color: 'red`,
            }}>{AltertMsg}</span>
 
 

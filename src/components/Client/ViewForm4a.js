@@ -55,7 +55,7 @@ const ViewForm4a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -64,7 +64,7 @@ const ViewForm4a = () => {
     }
     // const getService = async () => {
     //      const sn = localStorage.getItem('getService_Name')
-    //     const response = await axiosJWT.get('http://localhost:5000/getService_Name',{
+    //     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getService_Name`,{
     //       params:{
     //         getService_Name: sn
     //       }
@@ -75,28 +75,28 @@ const ViewForm4a = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-            localStorage.setItem('V_P_Pincode',P_Pincode);
-                localStorage.setItem('V_P_State',P_State);
-                localStorage.setItem('V_P_District',P_District);
-                localStorage.setItem('V_P_Taluk_Name',P_Taluk_Name);
-                localStorage.setItem('V_P_City_Village',P_City_Village);
-                localStorage.setItem('V_P_Locality',P_Locality);
-                localStorage.setItem('V_P_Street',P_Street);
-                localStorage.setItem('V_P_House_No',P_House_No);
-                localStorage.setItem('V_P_House_Name',P_House_Name);
-                localStorage.setItem('V_P_Police_Station',P_Police_Station);
-                localStorage.setItem('V_Tele_No',Tele_No);
-                localStorage.setItem('V_Pincode',Pincode);
-                localStorage.setItem('V_State',State);
-                localStorage.setItem('V_District',District);
-                localStorage.setItem('V_Taluk_Name',Taluk_Name);
-                localStorage.setItem('V_City_Village',City_Village);
-                localStorage.setItem('V_Locality',Locality);
-                localStorage.setItem('V_Street',Street);
+            localStorage.setItem('V_P_Pincode`,P_Pincode);
+                localStorage.setItem('V_P_State`,P_State);
+                localStorage.setItem('V_P_District`,P_District);
+                localStorage.setItem('V_P_Taluk_Name`,P_Taluk_Name);
+                localStorage.setItem('V_P_City_Village`,P_City_Village);
+                localStorage.setItem('V_P_Locality`,P_Locality);
+                localStorage.setItem('V_P_Street`,P_Street);
+                localStorage.setItem('V_P_House_No`,P_House_No);
+                localStorage.setItem('V_P_House_Name`,P_House_Name);
+                localStorage.setItem('V_P_Police_Station`,P_Police_Station);
+                localStorage.setItem('V_Tele_No`,Tele_No);
+                localStorage.setItem('V_Pincode`,Pincode);
+                localStorage.setItem('V_State`,State);
+                localStorage.setItem('V_District`,District);
+                localStorage.setItem('V_Taluk_Name`,Taluk_Name);
+                localStorage.setItem('V_City_Village`,City_Village);
+                localStorage.setItem('V_Locality`,Locality);
+                localStorage.setItem('V_Street`,Street);
 
-                localStorage.setItem('V_House_No',House_No);
-                localStorage.setItem('V_House_Name',House_Name);
-                localStorage.setItem('V_Police_Station',Police_Station);
+                localStorage.setItem('V_House_No`,House_No);
+                localStorage.setItem('V_House_Name`,House_Name);
+                localStorage.setItem('V_Police_Station`,Police_Station);
 
 
             navigate("/viewForm4b");

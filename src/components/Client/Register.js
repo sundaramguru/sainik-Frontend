@@ -37,12 +37,12 @@ const [RT, setRT] = useState('');
 const axiosJWT = axios.create();
 
 const getPrefix = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/prefix_D');
+    const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/prefix_D');
     setPrefix(response.data);
     }
 
-const SUFFIX = ['A','B','C','D','E','F','G','H','I','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
-const REG = ['ESM','Widow'];
+const SUFFIX = ['A`,'B`,'C`,'D`,'E`,'F`,'G`,'H`,'I`,'G`,'H`,'I`,'J`,'K`,'L`,'M`,'N`,'O`,'P`,'Q`,'R`,'S`,'T`,'U`,'V`,'W`,'X`,'Y`,'Z'];
+const REG = ['ESM`,'Widow'];
 
 
 
@@ -130,7 +130,7 @@ const validate = (value) => {
 const Register = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/u_user_reg', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/u_user_reg`, {
                 Name: Name,
                 Service_No:Service_No,
                 Mobile:Mobile,
@@ -142,10 +142,10 @@ const Register = async (e) => {
 
 
 localStorage.clear();
-            localStorage.setItem('Service_No', Service_No);
-            localStorage.setItem('Name', Name);
-            localStorage.setItem('Mobile', Mobile);
-            localStorage.setItem('Mail_Id', Mail_Id);
+            localStorage.setItem('Service_No`, Service_No);
+            localStorage.setItem('Name`, Name);
+            localStorage.setItem('Mobile`, Mobile);
+            localStorage.setItem('Mail_Id`, Mail_Id);
 
          navigate("/login");
         } catch (error) {
@@ -232,7 +232,7 @@ localStorage.clear();
 
                  <span style={{
 
-                   color: 'red',
+                   color: 'red`,
                  }}>{emailError}</span>
 
 
@@ -243,8 +243,8 @@ localStorage.clear();
           <input type="password" id="password" class="fadeIn third passwordInput" name="login"   autocomplete = "off" maxlength = "25" minlength = "8" placeholder="Password"value={Password}  onClick={(e) => validate(e.target.value)} onChange={onpasswordChange} /><br/>
 
           <span style={{
-          fontWeight: 'bold',
-          color: 'red',
+          fontWeight: 'bold`,
+          color: 'red`,
           }}>{ErrorMessage}</span>
 
           <input type="password" id="password" class="fadeIn third passwordInput" name="login"   autocomplete = "off"  maxlength = "25" placeholder="Confirm Password"value={ConfPassword} onChange={(e) => setConfPassword(e.target.value)} />

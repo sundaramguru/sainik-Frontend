@@ -41,7 +41,7 @@ const ViewForm5a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -53,19 +53,19 @@ const ViewForm5a = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-                localStorage.setItem('V_Civil_Qualification',Civil_Qualification);
-                localStorage.setItem('V_Addi_Course',Addi_Course);
-                localStorage.setItem('V_Equi_Test',Equi_Test);
-                localStorage.setItem('V_Civil_Emp_Status',Civil_Emp_Status);
-                localStorage.setItem('V_Sector',Sector);
-                localStorage.setItem('V_Dept',Dept);
-                localStorage.setItem('V_Pres_Desg',Pres_Desg);
-                localStorage.setItem('V_Employer',Employer);
-                localStorage.setItem('V_Month_Income',Month_Income);
-                localStorage.setItem('V_Official_No',Official_No);
-                localStorage.setItem('V_Desg_Retire',Desg_Retire);
-                localStorage.setItem('V_Retire_Date',Retire_Date);
-                localStorage.setItem('V_Civil_PPO_No',Civil_PPO_No);
+                localStorage.setItem('V_Civil_Qualification`,Civil_Qualification);
+                localStorage.setItem('V_Addi_Course`,Addi_Course);
+                localStorage.setItem('V_Equi_Test`,Equi_Test);
+                localStorage.setItem('V_Civil_Emp_Status`,Civil_Emp_Status);
+                localStorage.setItem('V_Sector`,Sector);
+                localStorage.setItem('V_Dept`,Dept);
+                localStorage.setItem('V_Pres_Desg`,Pres_Desg);
+                localStorage.setItem('V_Employer`,Employer);
+                localStorage.setItem('V_Month_Income`,Month_Income);
+                localStorage.setItem('V_Official_No`,Official_No);
+                localStorage.setItem('V_Desg_Retire`,Desg_Retire);
+                localStorage.setItem('V_Retire_Date`,Retire_Date);
+                localStorage.setItem('V_Civil_PPO_No`,Civil_PPO_No);
 
             navigate("/viewForm5b");
         } catch (error) {

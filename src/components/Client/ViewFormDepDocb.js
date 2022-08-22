@@ -37,7 +37,7 @@ const DocForm = () => {
 
 
   const getRegisterDate  = async () => {
-         const response = await axiosJWT.get('http://localhost:5000/getRegisterDate',{
+         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getRegisterDate`,{
 
            params:{
              Service_No: Service_No
@@ -73,7 +73,7 @@ const DocForm = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/upload_DImg",
+        "${process.env.REACT_APP_BACKEND_URL}/upload_DImg",
         formData
       );
       alert ("Photo uploaded Successfully");
@@ -120,7 +120,7 @@ const DocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadD_Adhar",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadD_Adhar",
             formData
           );
           alert ("Adhaar uploaded Successfully");
@@ -142,7 +142,7 @@ const DocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadD_PAN",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadD_PAN",
             formData
           );
           alert ("PAN uploaded Successfully");
@@ -162,7 +162,7 @@ const DocForm = () => {
         formData.append("D_ECHSName", D_ECHSName);
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadD_ECHS",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadD_ECHS",
             formData
           );
           alert ("ECHS Card uploaded Successfully");
@@ -186,7 +186,7 @@ const DocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/UploadD_Voter",
+            "${process.env.REACT_APP_BACKEND_URL}/UploadD_Voter",
             formData
           );
           alert ("Voter uploaded Successfully");
@@ -283,7 +283,7 @@ const changeStylev = () => {
               };
 
 
-const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
+const RELATION = ['Father`, 'Mother`, 'Daughter`, 'Son'];
 
       return (
         <div className="center">
@@ -373,7 +373,7 @@ const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
 
               <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
               <div className="col-lg-12 right-align " >
-              <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+              <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
               </div>
               <button className=" btn" ><Link to="/ViewFormDepDoc">Back</Link> </button>
               <button className="btn my-2 my-sm-0 " ><Link to="/ViewForm7a">Add</Link> </button>

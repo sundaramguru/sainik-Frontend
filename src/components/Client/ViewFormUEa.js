@@ -39,7 +39,7 @@ const ViewFormUEa = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminformue',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminformue`,{
           params:{
           A_Service_No: sn
           }
@@ -48,7 +48,7 @@ const ViewFormUEa = () => {
     }
 
     // const getTrades  = async () => {
-    //         const response = await axiosJWT.get('http://localhost:5000/getTrades',{
+    //         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getTrades`,{
     //
     //           params:{
     //             Service_No: Service_No
@@ -60,7 +60,7 @@ const ViewFormUEa = () => {
 
 
           // const getCivilQualification  = async () => {
-          //         const response = await axiosJWT.get('http://localhost:5000/getCivilQualification',{
+          //         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getCivilQualification`,{
           //
           //           params:{
           //             Service_No: Service_No
@@ -75,16 +75,16 @@ const ViewFormUEa = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-                localStorage.setItem('V_ESM_No',ESM_No);
-                localStorage.setItem('V_Addi_Course1',Addi_Course1);
-                localStorage.setItem('V_Addi_Course2',Addi_Course2);
-                localStorage.setItem('V_Addi_Course3',Addi_Course3);
-                localStorage.setItem('V_Addi_Course4',Addi_Course4);
-                localStorage.setItem('V_Civil_Qualification',Civil_Qualification);
-                localStorage.setItem('V_Age',Age);
-                localStorage.setItem('V_Trade_Name',Trade_Name);
-                localStorage.setItem('V_Trade_Code',Trade_Code);
-                localStorage.setItem('V_Equi_Test',Equi_Test);
+                localStorage.setItem('V_ESM_No`,ESM_No);
+                localStorage.setItem('V_Addi_Course1`,Addi_Course1);
+                localStorage.setItem('V_Addi_Course2`,Addi_Course2);
+                localStorage.setItem('V_Addi_Course3`,Addi_Course3);
+                localStorage.setItem('V_Addi_Course4`,Addi_Course4);
+                localStorage.setItem('V_Civil_Qualification`,Civil_Qualification);
+                localStorage.setItem('V_Age`,Age);
+                localStorage.setItem('V_Trade_Name`,Trade_Name);
+                localStorage.setItem('V_Trade_Code`,Trade_Code);
+                localStorage.setItem('V_Equi_Test`,Equi_Test);
 
             navigate("/viewFormueb");
         } catch (error) {

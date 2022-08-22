@@ -58,7 +58,7 @@ const ViewForm6a = () => {
 
     const getUsers = async () => {
         const sn = localStorage.getItem('V_Service_No')
-        const response = await axiosJWT.get('http://localhost:5000/adminform1a',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/adminform1a`,{
           params:{
             V_Service_No: sn
           }
@@ -67,7 +67,7 @@ const ViewForm6a = () => {
     }
     // const getService = async () => {
     //      const sn = localStorage.getItem('getService_Name')
-    //     const response = await axiosJWT.get('http://localhost:5000/getService_Name',{
+    //     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getService_Name`,{
     //       params:{
     //         getService_Name: sn
     //       }
@@ -78,31 +78,31 @@ const ViewForm6a = () => {
         e.preventDefault();
         try {
             // console.log(Service_No);
-            localStorage.setItem('V_Marital_Status',Marital_Status);
-                localStorage.setItem('V_Marriage_Date',Marriage_Date);
-                localStorage.setItem('V_Spouse_Name',Spouse_Name);
-                localStorage.setItem('V_Spouse_Relation',Spouse_Relation);
-                localStorage.setItem('V_Spouse_DOB',Spouse_DOB);
-                localStorage.setItem('V_Spouse_Id_Mark',Spouse_Id_Mark);
-                localStorage.setItem('V_Spouse_Adhaar',Spouse_Adhaar);
-                localStorage.setItem('V_Spouse_Voter_Id',Spouse_Voter_Id);
-                localStorage.setItem('V_Spouse_PAN',Spouse_PAN);
-                localStorage.setItem('V_Spouse_CSD',Spouse_CSD);
-                localStorage.setItem('V_Spouse_ECHS',Spouse_ECHS);
-                localStorage.setItem('V_Spouse_Qualification',Spouse_Qualification);
-                localStorage.setItem('V_Spouse_Emp_Status',Spouse_Emp_Status);
-                localStorage.setItem('V_Spouse_Sector',Spouse_Sector);
-                localStorage.setItem('V_Spouse_Dept',Spouse_Dept);
-                localStorage.setItem('V_Spouse_Pres_Desg',Spouse_Pres_Desg);
-                localStorage.setItem('V_Spouse_Employer',Spouse_Employer);
-                localStorage.setItem('V_Spouse_Month_Income',Spouse_Month_Income);
-                localStorage.setItem('V_Spouse_Official_No',Spouse_Official_No);
-                localStorage.setItem('V_Spouse_Desg_Retire',Spouse_Desg_Retire);
-                localStorage.setItem('V_Spouse_Retire_Date',Spouse_Retire_Date);
-                localStorage.setItem('V_Spouse_Civil_PPO_No',Spouse_Civil_PPO_No);
-                localStorage.setItem('V_Court_Order',Court_Order);
-                localStorage.setItem('V_Divorce_Date',Divorce_Date);
-                localStorage.setItem('V_Death_Date',Death_Date);
+            localStorage.setItem('V_Marital_Status`,Marital_Status);
+                localStorage.setItem('V_Marriage_Date`,Marriage_Date);
+                localStorage.setItem('V_Spouse_Name`,Spouse_Name);
+                localStorage.setItem('V_Spouse_Relation`,Spouse_Relation);
+                localStorage.setItem('V_Spouse_DOB`,Spouse_DOB);
+                localStorage.setItem('V_Spouse_Id_Mark`,Spouse_Id_Mark);
+                localStorage.setItem('V_Spouse_Adhaar`,Spouse_Adhaar);
+                localStorage.setItem('V_Spouse_Voter_Id`,Spouse_Voter_Id);
+                localStorage.setItem('V_Spouse_PAN`,Spouse_PAN);
+                localStorage.setItem('V_Spouse_CSD`,Spouse_CSD);
+                localStorage.setItem('V_Spouse_ECHS`,Spouse_ECHS);
+                localStorage.setItem('V_Spouse_Qualification`,Spouse_Qualification);
+                localStorage.setItem('V_Spouse_Emp_Status`,Spouse_Emp_Status);
+                localStorage.setItem('V_Spouse_Sector`,Spouse_Sector);
+                localStorage.setItem('V_Spouse_Dept`,Spouse_Dept);
+                localStorage.setItem('V_Spouse_Pres_Desg`,Spouse_Pres_Desg);
+                localStorage.setItem('V_Spouse_Employer`,Spouse_Employer);
+                localStorage.setItem('V_Spouse_Month_Income`,Spouse_Month_Income);
+                localStorage.setItem('V_Spouse_Official_No`,Spouse_Official_No);
+                localStorage.setItem('V_Spouse_Desg_Retire`,Spouse_Desg_Retire);
+                localStorage.setItem('V_Spouse_Retire_Date`,Spouse_Retire_Date);
+                localStorage.setItem('V_Spouse_Civil_PPO_No`,Spouse_Civil_PPO_No);
+                localStorage.setItem('V_Court_Order`,Court_Order);
+                localStorage.setItem('V_Divorce_Date`,Divorce_Date);
+                localStorage.setItem('V_Death_Date`,Death_Date);
 
             navigate("/viewForm6b");
         } catch (error) {

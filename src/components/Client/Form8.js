@@ -80,7 +80,7 @@ useEffect(() => {
     //SUCCESS ELD DEPENDENT DATE OF BIRTH
 
     const getRegisterDate  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getRegisterDate',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getRegisterDate`,{
 
              params:{
                Service_No: Service_No
@@ -92,7 +92,7 @@ useEffect(() => {
 
 
     const getName  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getName',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
              params:{
                Service_No: Service_No
@@ -102,7 +102,7 @@ useEffect(() => {
          }
 
 const getDDOB  = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/getDOB',{
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getDOB`,{
 
           params:{
             Service_No: Service_No
@@ -120,7 +120,7 @@ const creatDRow = async (e) => {
 
 
    try {
-      await axios.post("http://localhost:5000/creatDRow",{
+      await axios.post("${process.env.REACT_APP_BACKEND_URL}/creatDRow",{
        Service_No:Service_No,
        Dep_Name:Dep_Name,
        Relation:Relation}
@@ -131,8 +131,8 @@ const creatDRow = async (e) => {
  };
 
 
-const RELATION = ['Father', 'Mother', 'Daughter', 'Son'];
-const MARITAL_STATUS = ['Single', 'Married', 'Divorced', 'Widow/Widower'];
+const RELATION = ['Father`, 'Mother`, 'Daughter`, 'Son'];
+const MARITAL_STATUS = ['Single`, 'Married`, 'Divorced`, 'Widow/Widower'];
 
 const onAcademicChange = (e) =>  {
     const p = /^[0-9]+$/;
@@ -195,13 +195,13 @@ const onDepNameChange = (e) =>  {
     const axiosJWT = axios.create();
 
     {/*const getdep = async () => {
-        const response = await axiosJWT.get('http://localhost:5000/dep');
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/dep');
         setdep(response.data);
     }*/}
 
     // const getdep = async () => {
     //     const sn=localStorage.getItem('A_Dep_Name')
-    //     const response = await axiosJWT.get('http://localhost:5000/Form8dep',{
+    //     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/Form8dep`,{
     //         params:{
     //             Dep_Name: sn
     //         }
@@ -213,7 +213,7 @@ const onDepNameChange = (e) =>  {
     const Form8 = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/u_dependent_details', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/u_dependent_details`, {
                 Service_No:Service_No,
                 Dep_Name: Dep_Name,
                 Registered_date:Registered_date,
@@ -225,8 +225,8 @@ const onDepNameChange = (e) =>  {
                 Dep_Employment_Status: Dep_Employment_Status,
                 Dep_Marital_Status: Dep_Marital_Status
             });
-            localStorage.setItem('Dep_Name',Dep_Name)
-            localStorage.setItem('Relation',Relation)
+            localStorage.setItem('Dep_Name`,Dep_Name)
+            localStorage.setItem('Relation`,Relation)
 
 creatDRow()
  navigate("/D_DocForm");
@@ -371,7 +371,7 @@ creatDRow()
     <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
 
 <div className="col-lg-12 right-align " >
-     <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+     <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
      </div>
     <button className=" btn" ><Link to="/form7">Back</Link> </button>
     <button className="btn my-2 my-sm-0 " type="submit">Next </button>

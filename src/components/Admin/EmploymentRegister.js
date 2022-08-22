@@ -38,7 +38,7 @@ getEmp_Status();
     const axiosJWT = axios.create();
 
     const getStatus  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getUserStatus',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getUserStatus`,{
 
              params:{
                Service_No: Service_No
@@ -49,7 +49,7 @@ getEmp_Status();
 
 
               const getEmp_Status  = async () => {
-                     const response = await axiosJWT.get('http://localhost:5000/getEmp_Status',{
+                     const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getEmp_Status`,{
 
                        params:{
                          Service_No: Service_No
@@ -102,7 +102,7 @@ else if(Reg_Type=="Widow"){
 
          <div className="text-center text-dark p-3" style={{backgroundColor: "#008E89"}}>
          <div><br/>
-         <span style={{color: 'white', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} > EMPLOYMENT REGISTRATION</span><br/><br/>
+         <span style={{color: 'white`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} > EMPLOYMENT REGISTRATION</span><br/><br/>
 
         </div>  </div>
 

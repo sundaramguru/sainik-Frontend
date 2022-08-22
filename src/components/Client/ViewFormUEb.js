@@ -58,7 +58,7 @@ const ViewFormUEbEdit = () => {
 
 
     const getEDOB  = async () => {
-           const response = await axiosJWT.get('http://localhost:5000/getEDOB',{
+           const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getEDOB`,{
 
              params:{
                Service_No: Service_No
@@ -68,7 +68,7 @@ const ViewFormUEbEdit = () => {
 
          }
          const getName  = async () => {
-                const response = await axiosJWT.get('http://localhost:5000/getName',{
+                const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getName`,{
 
                   params:{
                     Service_No: Service_No
@@ -78,7 +78,7 @@ const ViewFormUEbEdit = () => {
               }
 
          const getTrades  = async () => {
-                 const response = await axiosJWT.get('http://localhost:5000/getTrades',{
+                 const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getTrades`,{
 
                    params:{
                      Service_No: Service_No
@@ -90,7 +90,7 @@ const ViewFormUEbEdit = () => {
 
 
                const getCivilQualification  = async () => {
-                       const response = await axiosJWT.get('http://localhost:5000/getCivilQualification',{
+                       const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getCivilQualification`,{
 
                          params:{
                            Service_No: Service_No
@@ -119,7 +119,7 @@ const ViewFormUEbEdit = () => {
     const axiosJWT = axios.create();
        const getCivil = async () => {
        // const response = await axiosJWT.get(`${process.env.REACT_APP_DOMAIN}/civil_D`);
-        const response = await axiosJWT.get('http://localhost:5000/civil_D');
+        const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/civil_D');
        setCivil(response.data);
        }
 
@@ -129,7 +129,7 @@ const ViewFormUEbEdit = () => {
 const ViewFormUEbEdit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/ViewFormUEbEdit', {
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/ViewFormUEbEdit`, {
               Service_No:Service_No,
               ESM_No:ESM_No,
               Addi_Course1:Addi_Course1,

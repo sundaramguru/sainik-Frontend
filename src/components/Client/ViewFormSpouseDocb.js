@@ -43,7 +43,7 @@ const SpouseDocForm = () => {
 
 
   const getRegisterDate  = async () => {
-         const response = await axiosJWT.get('http://localhost:5000/getRegisterDate',{
+         const response = await axiosJWT.get(`${process.env.REACT_APP_BACKEND_URL}/getRegisterDate`,{
 
            params:{
              Service_No: Service_No
@@ -101,7 +101,7 @@ const SpouseDocForm = () => {
 
           try {
             const res = await axios.post(
-              "http://localhost:5000/upload_SImg",
+              "${process.env.REACT_APP_BACKEND_URL}/upload_SImg",
               formData
             );
             alert ("Photo uploaded Successfully");
@@ -123,7 +123,7 @@ const SpouseDocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadS_Adhar",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadS_Adhar",
             formData
           );
           alert ("Adhar uploaded Successfully");
@@ -145,7 +145,7 @@ const SpouseDocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadS_PAN",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadS_PAN",
             formData
           );
           alert ("PAN  uploaded Successfully");
@@ -164,7 +164,7 @@ const SpouseDocForm = () => {
         formData.append("S_ECHSName", S_ECHSName);
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadS_ECHS",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadS_ECHS",
             formData
           );
           alert ("ECHS uploaded Successfully");
@@ -186,7 +186,7 @@ const SpouseDocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/UploadS_Voter",
+            "${process.env.REACT_APP_BACKEND_URL}/UploadS_Voter",
             formData
           );
           alert ("Voter uploaded Successfully");
@@ -206,7 +206,7 @@ const SpouseDocForm = () => {
 
         try {
           const res = await axios.post(
-            "http://localhost:5000/uploadS_PPO",
+            "${process.env.REACT_APP_BACKEND_URL}/uploadS_PPO",
             formData
           );
           alert ("PPO uploaded Successfully");
@@ -399,7 +399,7 @@ const [disable, setDisable] = useState(false);
 
               <div className="text-center text-dark p-3 foot" style={{backgroundColor: "#DBE6FD"}}>
               <div className="col-lg-12 right-align " >
-              <span style={{color: 'red', fontWeight : '900', fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
+              <span style={{color: 'red`, fontWeight : '900`, fontStyle : 'italic' , fontFamily : 'Times New Roman'}} >* Fields are Mandatory</span>
               </div>
               <button className=" btn" ><Link to="/ViewForm6a">Back</Link> </button>
               <button className="btn my-2 my-sm-0 " ><Link to="/ViewForm7a">Next</Link> </button>
